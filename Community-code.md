@@ -85,4 +85,4 @@ char * updateTileMapAreaWithPriority(char *tileMap, u8 priority, u16 x, u16 y, u
 
 #### Example
 
-![Update the priority of a tile map area](updateTileMapAreaWithPriority-preview.png)
+![Update the priority of a tile map area](https://user-images.githubusercontent.com/48180545/187201833-17357bb2-eed4-48b8-a3b1-64a6538ece08.png)
