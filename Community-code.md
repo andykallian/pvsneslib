@@ -29,3 +29,60 @@ It has been ported on PVSneslib v3 and is available [here](https://github.com/al
 ### Scrolling map with collisions :
 
 [This code](https://github.com/alekmaul/pvsneslib/files/7149024/mapscroll_example_with_collisions_v3.zip) made by diegoleao changes the original "map scroll example" to add collision checking. Move Mario up, down, left, and right to check for tiles that contain collisions. Press and hold B to move 1 pixel at a time, for finer control.
+
+### Update the priority of a tile map area
+
+#### Description
+
+This code made by malayli updates a tile map area priority in any backgrounds like BG1 or BG2.
+It's very useful if you want to have tiles appearing over and behind your sprites for example.
+
+#### Code
+
+```
+u16 bgMapTemp[4096];
+u16 bgMapPageNumberSize;
+u8 bgMapX;
+u16 bgMapY;
+u16 bgMapYMax;
+
+/*!\brief Set the priority of a tile map area at {x, y, width, height, pageNumber}
+    \param tileMap the tile map
+    \param priority the priority to be set for the tile map area
+    \param x the X position of the tile map area
+    \param y the Y position of the tile map area
+    \param width the width of the tile map area
+    \param height the height of the tile map area
+    \param pageNumber the page number of the tile map
+    \return the updated tile map
+*/
+char * updateTileMapAreaWithPriority(char *tileMap, u8 priority, u16 x, u16 y, u16 width, u16 height, u8 pageNumber) {
+    bgMapPageNumberSize = 1024 * pageNumber;
+    bgMapX = 0;
+    bgMapY = (y * 32) + bgMapPageNumberSize;
+    bgMapYMax = (y * 32) + (height * 32) + bgMapPageNumberSize;
+
+    memcpy((u8 *) &bgMapTemp, tileMap, 4096);
+
+    while(bgMapY < bgMapYMax) {
+        if (x <= bgMapX && bgMapX < width) {
+            bgMapTemp[bgMapY] = ((u16 *)tileMap)[bgMapY] | (priority<<13);
+        }
+
+        if (bgMapX == 31) {
+            bgMapX = 0;
+
+        } else {
+            bgMapX++;
+        }
+
+        bgMapY++;
+    }
+
+    return (char *)bgMapTemp;
+}
+```
+
+#### Example
+
+![Update the priority of a tile map area](updateTileMapAreaWithPriority-preview.png)
