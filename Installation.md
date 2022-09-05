@@ -132,4 +132,4 @@ If you want to use the **~** character to point on your home directory, you can 
 Now everything is installed correctly, you can validate that it works correctly by compiling the hello world sample. Just go under your installation path, snes-examples > hello_world and run the `make` command.
 
 
-If you encounter an issue, join us on Discord to get help!
+If you encounter an issue, join us on [Discord](https://discord.gg/DzEFnhB) to get help!
