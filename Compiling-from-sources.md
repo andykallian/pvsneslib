@@ -1,5 +1,8 @@
 If you want to build the whole pvsneslib project directly from sources, you will need some informations.
 
+_Before following this tutorial, we strongly recommend you to do a first installation from the release version thanks to [this page.](https://github.com/alekmaul/pvsneslib/wiki/Installation)_
+_It will provide you tools and command lines to install dependencies and avoid you some loss of time here !_
+
 Please keep in mind that it works only on **32 bits** system.
 I will also consider that these tools are mandatory everywhere so i will not add it in the list anymore :
 
