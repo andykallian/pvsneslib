@@ -9,7 +9,9 @@
   1. **[Introduction](https://github.com/alekmaul/pvsneslib/wiki/Introduction)**
   1. **[Input and Output](https://github.com/alekmaul/pvsneslib/wiki/Input-and-Output)**
   1. **[Sprites](https://github.com/alekmaul/pvsneslib/wiki/Sprites)**
+  1. **[Dynamic Sprites](https://github.com/alekmaul/pvsneslib/wiki/Dynamic-Sprites)**
   1. **[Backgrounds](https://github.com/alekmaul/pvsneslib/wiki/Backgrounds)**
+  1. **[Import maps from Tiled](https://github.com/alekmaul/pvsneslib/wiki/Backgrounds)**
 
 # Misc #
   1. **[Roadmap](https://github.com/alekmaul/pvsneslib/wiki/Roadmap)**
