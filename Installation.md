@@ -53,7 +53,8 @@ As explained before, i will show the command line using apt-get tool.
 By running this command line, you will have gcc :
 `sudo apt install gcc`
 
-_To confirm, gcc-multilib seems to be mandatory to use gfx2snes. If someone can confirm us this point, we will update this page_
+For gfx2snes, you will need to install gcc-multilib too :
+`sudo apt install gcc-multilib`
 
 #### Python 3
 
@@ -64,7 +65,7 @@ Download and install the latest version of [python 3](https://www.python.org/dow
 ##### On Linux
 
 You just need to run :
-`sudo apt install python3`
+`sudo apt install python-is-python3`
 
 ##### Check that it works!
 
@@ -118,7 +119,7 @@ But if you do not want to execute this command before using the library, you can
 
 Open the terminal and execute this commands after editing the path with your own:
 
-`cd && echo export PVSNESLIB_HOME=/path/to/pvsneslib >> .profile`
+`cd && echo PVSNESLIB_HOME=/path/to/pvsneslib >> .profile`
 
 It will add this variable to your .profile file, you now need to reload it to take this change into account.
 
