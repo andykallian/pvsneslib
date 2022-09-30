@@ -7,7 +7,7 @@ PVSnesLib is an open and free library to develop programs for the Nintendo SNES 
 Created initially for the 20th birthday of the Nintendo SNES, it has been evolved a lot and is now mainly coded in assembler for performances reasons. It is also directly usable in asm for those who do not want to use C language but without rewriting everything from scratch.
 
 PVSneslib content is split in 3 parts
-* The library itself and a Doxygen documentation (in the docs folder).
+* The library itself.
 * The tools and compiler (compatible on Windows and Linux operating systems but for **32 bits only**)
 * The examples (sprites, sound, graphics, debug, ...)
 
