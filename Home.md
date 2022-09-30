@@ -13,4 +13,6 @@ PVSneslib content is split in 3 parts
 
 You can download the complete archive in [release section](https://github.com/alekmaul/pvsneslib/releases) then check the Wiki sections to get installation instructions and basics tutorials.
 
+You can browse the documentation [here](https://alekmaul.github.io/pvsneslib/).
+
 Welcome to PVSnesLib world and enjoy doing some homebrews for your SNES !
