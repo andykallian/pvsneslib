@@ -119,7 +119,7 @@ But if you do not want to execute this command before using the library, you can
 
 Open the terminal and execute this commands after editing the path with your own:
 
-`cd && echo PVSNESLIB_HOME=/path/to/pvsneslib >> .profile`
+`cd && echo export PVSNESLIB_HOME=/path/to/pvsneslib >> .profile`
 
 It will add this variable to your .profile file, you now need to reload it to take this change into account.
 
