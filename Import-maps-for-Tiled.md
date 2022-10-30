@@ -1,5 +1,3 @@
-**update in progress **
-
 This tutorial will help you to understand how to use the PVSnesLib map and object engines. The source code is available in examples part of pvsneslib.
 
 We are going to do the first level of Commander Keen 1, which was a great game on PC (https://en.wikipedia.org/wiki/Commander_Keen_in_Invasion_of_the_Vorticons).
