@@ -27,6 +27,8 @@ Save the 2 files shown below in same directory where you saved the PNG map file 
 
 <img src="https://user-images.githubusercontent.com/2528347/198873694-4672ac17-2b43-4978-8770-ad2c188ac272.png">
 
+Use your graphic editor software to change color depth of tiles to 256 colors without alpha channel (or gfx2snes will not work...). I used GraphicGale for that (https://graphicsgale.com/us/).
+
 ## Update tile properties
 
 ## Add objects on map
