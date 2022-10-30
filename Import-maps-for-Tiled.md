@@ -38,11 +38,3 @@ Now, double-click on tmx file, it will open Tiled with your png file converted t
 <img width="400" src="https://user-images.githubusercontent.com/2528347/198880481-b873e585-757f-4f8b-99e9-ed06cfab5bd7.png">
 
 Next tutorial will explain how to update map in Tiled for collision detection and how to add objects.
-
-## Update tile properties
-
-## Add objects on map
-
-
-## Export map in jSON format
-
