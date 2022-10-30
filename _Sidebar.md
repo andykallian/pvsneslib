@@ -12,7 +12,7 @@
   1. **[Dynamic Sprites](https://github.com/alekmaul/pvsneslib/wiki/Dynamic-Sprites)**
   1. **[Backgrounds](https://github.com/alekmaul/pvsneslib/wiki/Backgrounds)**
   1. **[Map & Object Engines 1: Import maps for Tiled](https://github.com/alekmaul/pvsneslib/wiki/Import-maps-for-Tiled)**
-  1. **[Map & Object Engines 2: Update maps in Tiled](https://github.com/alekmaul/pvsneslib/wiki/Import-maps-for-Tiled)**
+  1. **[Map & Object Engines 2: Update maps in Tiled](https://github.com/alekmaul/pvsneslib/wiki/Update-Maps-in-Tiled)**
 
 # Misc #
   1. **[Roadmap](https://github.com/alekmaul/pvsneslib/wiki/Roadmap)**
