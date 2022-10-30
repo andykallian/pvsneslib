@@ -7,6 +7,8 @@ We are going to do the first level of Commander Keen 1, which was a great game o
 The map used in the tutorial is this one:
 <a target="_blank" href="https://user-images.githubusercontent.com/2528347/198873690-096676c1-71af-4082-93ca-a2cf0a7a04c1.png"><img src="https://user-images.githubusercontent.com/2528347/198873690-096676c1-71af-4082-93ca-a2cf0a7a04c1.png"></a>
 
+Click on the map and save it on your hard drive, inside a directory for this tutorial.
+
 ## Install Tiled
 
 Go to https://www.mapeditor.org/ and download Tiled for your operating system (download is available at https://thorbjorn.itch.io/tiled).  
