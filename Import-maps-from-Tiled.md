@@ -5,7 +5,7 @@ This tutorial will help you to understand how to use the PVSnesLib map and objec
 We are going to do the first level of Commander Keen 1, which was a great game on PC (https://en.wikipedia.org/wiki/Commander_Keen_in_Invasion_of_the_Vorticons).
 
 The map used in the tutorial is this one:
-<a href="https://user-images.githubusercontent.com/2528347/198873690-096676c1-71af-4082-93ca-a2cf0a7a04c1.png" target="_blank"><img src="https://user-images.githubusercontent.com/2528347/198873690-096676c1-71af-4082-93ca-a2cf0a7a04c1.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/2528347/198873690-096676c1-71af-4082-93ca-a2cf0a7a04c1.png"><img src="https://user-images.githubusercontent.com/2528347/198873690-096676c1-71af-4082-93ca-a2cf0a7a04c1.png"></a>
 
 ## Install Tiled
 
