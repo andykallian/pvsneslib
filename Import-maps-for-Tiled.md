@@ -29,9 +29,15 @@ Save the 2 files shown below in same directory where you saved the PNG map file 
 
 Use your graphic editor software to change color depth of tiles to 256 colors without alpha channel (or gfx2snes will not work...). 
 
-![image](https://user-images.githubusercontent.com/2528347/198880302-c959856b-8f34-4a8c-be0e-e6e062249249.png)
+<img width="300" src="https://user-images.githubusercontent.com/2528347/198880302-c959856b-8f34-4a8c-be0e-e6e062249249.png">
 
 I used GraphicGale for that (https://graphicsgale.com/us/).
+
+Now, double-click on tmx file, it will open Tiled with your png file converted to a map file compatible with PVSnesLib!
+
+<img width="400" src="https://user-images.githubusercontent.com/2528347/198880481-b873e585-757f-4f8b-99e9-ed06cfab5bd7.png">
+
+Next tutorial will explain how to update map in Tiled for collision detection and how to add objects.
 
 ## Update tile properties
 
