@@ -23,7 +23,7 @@ The tool will create tileset and tmx files, as below.
 
 <img src="https://user-images.githubusercontent.com/2528347/198873692-5e1ee6d1-5ca0-4c11-a40c-196acb4853b4.png">
 
-Save the 2 files shown below in same directory you saved the PNG map file of the game.
+Save the 2 files shown below in same directory where you saved the PNG map file of the game.
 
 <img src="https://user-images.githubusercontent.com/2528347/198873694-4672ac17-2b43-4978-8770-ad2c188ac272.png">
 
