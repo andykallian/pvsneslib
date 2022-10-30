@@ -17,9 +17,15 @@ Warning ! You must use a V1.9.x to be compatible with tmx2snes tool.
 
 ## Create a tmx compatible file from a bitmap
 
-Go to https://portabledev.com/pvsneslib/tilesetextractor/ and upload your png file to allow the tool to create tileset and tmx files.
+Go to https://portabledev.com/pvsneslib/tilesetextractor/ and upload the png file your saved from Commander Keen 1 game with the "Choose File" button on the top left of the screen.
 
-the tool will create a number of files regarding what you want to do:
+The tool will create tileset and tmx files, as below.
+
+https://user-images.githubusercontent.com/2528347/198873692-5e1ee6d1-5ca0-4c11-a40c-196acb4853b4.png
+
+Save the 2 files shown below in same directory you saved the PNG map file of the game.
+
+https://user-images.githubusercontent.com/2528347/198873694-4672ac17-2b43-4978-8770-ad2c188ac272.png
 
 ## Update tile properties
 
