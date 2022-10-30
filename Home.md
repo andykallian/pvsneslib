@@ -1,6 +1,6 @@
 # What is PVSnesLib ?
 
-![PVSnesLib](https://user-images.githubusercontent.com/48180545/170839910-0455245c-6af4-495a-8165-24d28592dd85.jpeg)
+![PVSnesLib](https://user-images.githubusercontent.com/2528347/198873675-57a9670a-3ef2-4fc9-a5b0-e2e9fcf62cc6.png)
 
 PVSnesLib is an open and free library to develop programs for the Nintendo SNES using the C programming language.
 
