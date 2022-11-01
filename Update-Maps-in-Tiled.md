@@ -22,6 +22,15 @@ Do the same with pillars (again, red rectangles to show the tiles) to change pri
 
 <img width="500" src="https://user-images.githubusercontent.com/2528347/199170185-6f9115a9-4e0d-4580-a16a-06947b0abf03.png">
 
+If you have a tileset with multiple palettes, you can do the same with the "palette" property of each tile.
+
+The property "attribute" is special, some values are managed by the map/object engines.
+* FF00 is for solid tiles, objects can't pass through them
+* 0002 will change action property of object to ACT_BURN value (see <a href="https://github.com/alekmaul/pvsneslib/blob/master/pvsneslib/include/snes/object.h">object.h</a> file of PVSneslib)
+* 0004  will change action property of object to ACT_DIE value (see <a href="https://github.com/alekmaul/pvsneslib/blob/master/pvsneslib/include/snes/object.h">object.h</a> file of PVSneslib)
+
+"attribute" property value 0002 or 0004 will need to be managed in your code.
+
 ## Add objects on map
 
 
