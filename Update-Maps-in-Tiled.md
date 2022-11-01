@@ -29,7 +29,7 @@ The property "attribute" is special, some values are managed by the map/object e
 * 0002 will change action property of object to ACT_BURN value (see <a href="https://github.com/alekmaul/pvsneslib/blob/master/pvsneslib/include/snes/object.h">object.h</a> file of PVSneslib)
 * 0004  will change action property of object to ACT_DIE value (see <a href="https://github.com/alekmaul/pvsneslib/blob/master/pvsneslib/include/snes/object.h">object.h</a> file of PVSneslib)
 
-"attribute" property value 0002 or 0004 will need to be managed in your code.
+_"attribute" property value 0002 or 0004 will need to be managed in your code._
 
 ## Add objects on map
 
