@@ -13,6 +13,7 @@
   1. **[Backgrounds](https://github.com/alekmaul/pvsneslib/wiki/Backgrounds)**
   1. **[Map Engine 1: Import maps for Tiled](https://github.com/alekmaul/pvsneslib/wiki/Import-maps-for-Tiled)**
   1. **[Map Engine 2: Update maps in Tiled](https://github.com/alekmaul/pvsneslib/wiki/Update-Maps-in-Tiled)**
+  1. **[Map Engine 3: Display map on SNES (I)]( https://github.com/alekmaul/pvsneslib/wiki/Display-map-on-SNES-(1))**
 
 # Misc #
   1. **[Roadmap](https://github.com/alekmaul/pvsneslib/wiki/Roadmap)**
