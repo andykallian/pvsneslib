@@ -1,5 +1,3 @@
-**update in progress **
-
 You must now have a tmx file with a tileset properly configured for Tiled. 
 We need now to update tile properties for map engine.
 If not, read 1st part of the tutorial to create it (https://github.com/alekmaul/pvsneslib/wiki/Import-maps-for-Tiled)
