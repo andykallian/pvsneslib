@@ -10,8 +10,17 @@ On the screen below, click on "Edit Tileset" button to open a new tab with tiles
 
 <img width="300" src="https://user-images.githubusercontent.com/2528347/199168309-7d0eabf0-f314-48e4-b199-b2d89a7c927c.png">
 
-If you used the converter tool described in Part1, you will have 3 properties for each tile ("attribute", "palette" and "priority"). If not, select all the tiles on the right with the mouse and use the "+" button on the bottom left to create the 3 properties.
+If you used the converter tool described in Part1, you will have 3 properties for each tile ("attribute", "palette" and "priority"). If not, select all the tiles on the right with the mouse and use the "+" button on the bottom left to add the 3 properties.
+
 <img width="400" src="https://user-images.githubusercontent.com/2528347/199168311-0d65f788-1fdb-42a9-b549-74ed8feee85b.png">
+
+Now select the tiles as shown below to change their "attribute" property to FF00 to describe them as blocker. Our hero will not be able to pass through them.
+
+<img width="400" src="https://user-images.githubusercontent.com/2528347/199168313-46ed4214-31d4-49cf-b139-99cb0710391a.png">
+
+Do the same with pillars to change priority property to 1, to allow our hero to pass behind them.
+
+<img width="400" src="https://user-images.githubusercontent.com/2528347/199168314-19eabdd0-0038-41dc-812c-70a6b42de8d7.png">
 
 ## Add objects on map
 
