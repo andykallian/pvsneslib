@@ -38,8 +38,9 @@ _"attribute" property value 0002 or 0004 will need to be managed in your code._
 
 To export your map in a format usable with PVSnesLib, you need to click on the first tab named "Tiled.tmx", to be on the global map file.
 
-<img width="400" src="https://user-images.githubusercontent.com/2528347/199171995-261bc3d5-94c2-4404-999a-d3d889b4df09.png">
+<img width="300" src="https://user-images.githubusercontent.com/2528347/199171995-261bc3d5-94c2-4404-999a-d3d889b4df09.png">
 
 Then, choose **File/Export** and save the file in json format. Name the file tiled.tmj (Type is **JSON map files(*.tmj *.json)**). Next time, Tiled will not ask you about a filename as you previously saved your file in json format.
 
-<img width="400" src="https://user-images.githubusercontent.com/2528347/199171998-588929f3-19c8-4027-a36e-c6725e0ab25e.png">
+<img width="300" src="https://user-images.githubusercontent.com/2528347/199171998-588929f3-19c8-4027-a36e-c6725e0ab25e.png">
+
