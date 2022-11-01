@@ -31,9 +31,6 @@ The property "attribute" is special, some values are managed by the map/object e
 
 _"attribute" property value **0002** or **0004** will need to be managed in your code._
 
-## Add objects on map
-
-
 ## Export map in jSON format
 
 To export your map in a format usable with PVSnesLib, you need to click on the first tab named **tiled.tmx**, to be on the map file and not on the tiles part of the map.
@@ -44,3 +41,4 @@ Then, choose **File/Export** and save the file in json format. Name the file **t
 
 <img width="300" src="https://user-images.githubusercontent.com/2528347/199171998-588929f3-19c8-4027-a36e-c6725e0ab25e.png">
 
+Next tutorial will explain how to code the first part to display the map on screen.
