@@ -16,11 +16,11 @@ If you used the converter tool described in Part1, you will have 3 properties fo
 
 Now select the tiles as shown below to change their "attribute" property to FF00 to describe them as blocker. Our hero will not be able to pass through them.
 
-<img width="400" src="https://user-images.githubusercontent.com/2528347/199168313-46ed4214-31d4-49cf-b139-99cb0710391a.png">
+<img width="500" src="https://user-images.githubusercontent.com/2528347/199170180-98bdf0f9-992a-44cf-aa08-a8c2a0be923e.png">
 
 Do the same with pillars to change priority property to 1, to allow our hero to pass behind them.
 
-<img width="400" src="https://user-images.githubusercontent.com/2528347/199168314-19eabdd0-0038-41dc-812c-70a6b42de8d7.png">
+<img width="500" src="https://user-images.githubusercontent.com/2528347/199170185-6f9115a9-4e0d-4580-a16a-06947b0abf03.png">
 
 ## Add objects on map
 
