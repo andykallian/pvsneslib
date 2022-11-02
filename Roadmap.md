@@ -44,3 +44,4 @@ Feel free to help us by implementing any of this functionalities !
 - Add mouse driver compatibility
 - Add superscope compatibility
 - Add all needed extensions for C/C++ and vscode (like Intellisense, etc ...) in wiki part of vscode template
+- create a setScreenOff function to be harmonised (the lib have setScreenOn) which do the same thing than setBrightness
