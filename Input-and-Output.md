@@ -95,7 +95,7 @@ One more thing to know about this layout, it must be compiled with the "non opti
 ```
 pvsneslibfont.pic: pvsneslibfont.bmp
 	@echo convert font with no tile reduction ... $(notdir $@)
-	$(GFXCONV) -c16 -n -s8 -o2 -e1 -mR! -m $<
+	$(GFXCONV) -pc16 -n -s8 -o2 -e1 -mR! -m $<
 ```
 
 ## Input
