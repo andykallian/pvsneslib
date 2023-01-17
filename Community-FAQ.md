@@ -4,7 +4,7 @@ The remaining entries here on the unofficial FAQ are maintained by the community
 
 **[Miscellaneous](#MiscSection)**
 
-- [I want to contribute to this project](#MiscSection_1)
+- [I want to contribute to this project](#i-want-to-contribute-to-this-project)
 - [I want to ask something](#MiscSection_2)
 - [I found a bug. What can i do ?](#MiscSection_3)
 - [Can we create Hirom games with the lib ?](#MiscSection_4)
