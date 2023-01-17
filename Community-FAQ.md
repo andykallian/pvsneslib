@@ -37,6 +37,7 @@ The remaining entries here on the unofficial FAQ are maintained by the community
 - [How to build tcc 816 provided with PVSneslib sources ?](#CommonErrorsSection_10)
 - [I get the error "echo: command not found"](#CommonErrorsSection_11)
 - [On Linux i get : "fatal error: bits/libc-header-start.h"](#CommonErrorsSection_12)
+- [Using malloc with PVSneslib](CommonErrorsSection_13)
 
 **[Maps](#MapsSection)**
 
@@ -316,6 +317,12 @@ The value must be in unix style (**/c/snesdev** instead of **c:\\snesdev**) to a
 ### <a name="CommonErrorsSection_12"/>On Linux i get : "fatal error: bits/libc-header-start.h"
 
 When building some tools on Linux like **snestools**, if you get the error _/usr/include/stdlib.h:25:10: fatal error: bits/libc-header-start.h: no such file or directory_, it is related to the -m32 CFLAG provided in the makefile, you probably forgot to install some libraries from gcc. For example on Ubuntu, you just have to install **gcc-multilib** by executing `sudo apt-get install gcc-multilib`
+
+### <a name="CommonErrorsSection_13"/>Using malloc with PVSneslib
+
+I want to use malloc in my program, so I am trying something like this: u16 *myHudBuffer = (u16*)malloc(160*sizeof(u16)); but it is not working. malloc requires stdlib.h which I think does not work with pvsneslib.
+
+You can't use malloc with PVSneslib, you need to declare an array with a fixed size, u16 myHudBuffer[160] in this case.
 
 
 ## <a name="MapsSection"/>Maps
