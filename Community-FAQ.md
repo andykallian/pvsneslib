@@ -37,7 +37,7 @@ The remaining entries here on the unofficial FAQ are maintained by the community
 - [How to build tcc 816 provided with PVSneslib sources ?](#CommonErrorsSection_10)
 - [I get the error "echo: command not found"](#CommonErrorsSection_11)
 - [On Linux i get : "fatal error: bits/libc-header-start.h"](#CommonErrorsSection_12)
-- [Using malloc with PVSneslib](./#CommonErrorsSection_13)
+- [Using malloc with PVSneslib](#CommonErrorsSection_13)
 
 **[Maps](#MapsSection)**
 
