@@ -20,7 +20,7 @@ Size of background in tile representation (32×32 to 64×64)
 Set background map
 Set background tileset
 Background modes
-The SNES has 7 background modes.
+The SNES has 8 background modes.
 
 ```
 Mode    # Colors for BG
