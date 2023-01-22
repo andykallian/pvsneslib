@@ -1,5 +1,9 @@
 Here are some tips when you want to contribute to PVSnesLib and commit code to be reviewed
 
+# master branch is forbidden !
+
+Do not push your PR on master branch, always use the develop branch
+
 # Semantic Commit Messages
 
 See how a minor change to your commit message style can make you a better programmer.
