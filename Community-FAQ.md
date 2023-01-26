@@ -8,7 +8,7 @@ The remaining entries here on the unofficial FAQ are maintained by the community
 - [I want to ask something](#i-want-to-ask-something)
 - [I found a bug. What can i do ?](#i-found-a-bug-what-can-i-do-)
 - [Can we create Hirom games with the lib ?](#can-we-create-hirom-games-with-the-lib-)
-- [Where comes from PVSnesLib name ?](#where-comes-from-pvsneslib-name-)
+- [Why is it called PVSnesLib ?](#why-is-it-called-pvsneslib-)
 - [I would like to share my project with PVSneslib community](#i-would-like-to-share-my-project-with-pvsneslib-community)
 - [Is it possible to use Docker ?](#is-it-possible-to-use-docker-)
 - [How to update WLA submodule to the latest commit ?](#how-to-update-wla-submodule-to-the-latest-commit-)
@@ -25,13 +25,13 @@ The remaining entries here on the unofficial FAQ are maintained by the community
 
 **[Common errors](#common-errors)**
 
-- [What is CHECH_HEADERS error ?](#what-is-chech_headers-error-)
+- [What is CHECK_HEADERS error ?](#what-is-check_headers-error-)
 - [Colors of my loaded picture are wrong](#colors-of-my-loaded-picture-are-wrong)
 - [I get FIX_LABELS error when i build my project](#i-get-fix_labels-error-when-i-build-my-project)
 - [Why HDMA channel 0 doesn't work ?](#why-hdma-channel-0-doesnt-work-)
 - [Soundbank files are missing in music samples](#soundbank-files-are-missing-in-music-samples)
-- [My music has some glitch during playing](#my-music-has-some-glitch-during-playing)
-- [Programmer's Notepad add text anywhere when i compile](#programmers-notepad-add-text-anywhere-when-i-compile)
+- [My music has some glitch during playing](#my-music-has-some-glitches-during-playing)
+- [Programmer's Notepad add text anywhere when i compile](#programmers-notepad-adds-other-text-when-i-compile)
 - [Font system doesn't work with some background mode](#how-to-build-tcc-816-provided-with-pvsneslib-sources-)
 - [How to build tcc 816 provided with PVSneslib sources ?](#how-to-build-tcc-816-provided-with-pvsneslib-sources-)
 - [I get the error "echo: command not found"](#i-get-the-error-echo-command-not-found)
