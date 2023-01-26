@@ -10,11 +10,19 @@ If you want more informations on it, you can consult [web site of developer](htt
 If it is the first time you launch this software, the main window is the debugger : it contains hexadecimal informations on your rom.
 Go to "Options" tab, then "Emulation Setup" and configure keyboard or joypad buttons as you want. When you will finished it, do not forget to do "Options" then "Save Options".
 
-PVSneslib has a function to help debug of your code : it use console to print informations. By default, this option is not enabled in No$sns. Go to "Options", "Debugger Setup" then change value of "Debug Messages" and save it :
+PVSneslib has a function to help debug of your code : it use console to print informations. Depending the version of the software you use, you may have to enable it or adapt the value to your needs.
 
-![Enable debug messages](https://user-images.githubusercontent.com/48180545/56092236-b202cf00-5eb9-11e9-93af-5773d029de38.png)
+Go to "Options", "Debugger Setup" then update the hereunder value and save it :
 
-To open this window, go to "Window" tab then "Debug Message Window". In your project, you can now print informations using void consoleNocashMessage (const char *message) defined in console.h file.
+For old versions :
+
+![configure debug messages](https://user-images.githubusercontent.com/48180545/56092236-b202cf00-5eb9-11e9-93af-5773d029de38.png)
+
+For recent versions :
+
+![configure debug messages](https://user-images.githubusercontent.com/48180545/214948543-f6ece2c0-db83-4c86-bab2-2315c05abe64.png)
+
+To open this window, go to "Window" tab then "Debug Message Window". In your project, you can now print informations using `void consoleNocashMessage (const char *message)` defined in console.h file.
 This function works like [standard printf function](https://en.wikipedia.org/wiki/Printf_format_string).
 
 If you need a sample, take a look in "debug" example provided with PVSneslib.
