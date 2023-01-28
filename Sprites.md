@@ -14,7 +14,7 @@ Before starting using them, let’s see what exactly the SNES is capable of...
 
 ## Sprite sizes
  
-You can have two different sizes each time of screen, the OAM attribute defines (see below) which size you are going to use for a specific size. We named the first size the "Small" size and when we toggle the birt in OAM memory the "Large" size. Be careful, it's not a zoom of the sprite, it's only a way to define ttwo diffrent sizes.  
+You can have two different sizes each time of screen, the OAM attribute defines (see below) which size you are going to use for a specific size. We named the first size the "Small" size and when we toggle the bit in OAM memory the "Large" size. Be careful, it's not a zoom of the sprite, it's only a way to define ttwo diffrent sizes.  
 
 Here is a table showing how we can handle that :  
 
@@ -139,7 +139,7 @@ extern char palsprite;
 
 ## Init the sprites
 
-**PVSnesLib** used an internal table to strore sprites OAM. This table is named **oamMemory** and it is used to address the two OAM tables of the SNES.  
+**PVSnesLib** used an internal table to store sprites OAM. This table is named **oamMemory** and it is used to address the two OAM tables of the SNES.  
 You don't have to declare another table to handle sprite OAM, and the include files shipped with **PVSnesLib** allows your homebrew to know the oamMemory table.  
 ```
 unsigned char oamMemory[128*4+8*4]; // to address oma table low and high
