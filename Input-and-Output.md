@@ -1,5 +1,5 @@
 Output functions explained in this tutorial are only functions for _text displaying_. Another tutorial will be done for _backgrounds_.  
-We will also talk about input which are, well only _SNES joypads_.
+We will also talk about input which are, well only _SNES joypads_ and _multitaps_.
 
 ## Output
 
