@@ -1,4 +1,4 @@
-Sprites is a term in 2D graphics programming which refers to an image or animation. The Snes has dedicated hardware for dealing with sprites.  
+Sprites is a term in 2D graphics programming which refers to an image or animation. The SNES has dedicated hardware for dealing with sprites.  
 
 This makes the system very useful for 2D. Most gaming systems do not have a 2D core, and all sprites and other 2D graphics have to be handled manually (with bitmaps, masked binary bitmaps, quads, and so on ...).  
 
@@ -14,7 +14,7 @@ Before starting using them, let’s see what exactly the SNES is capable of...
 
 ## Sprite sizes
  
-You can have two different sizes each time of screen, the OAM attribute defines (see below) which size you are going to use for a specific size. We named the first size the "Small" size and when we toggle the bit in OAM memory the "Large" size. Be careful, it's not a zoom of the sprite, it's only a way to define ttwo diffrent sizes.  
+You can have two different sizes each time of screen, the OAM attribute defines (see below) which size you are going to use for a specific size. We named the first size the "Small" size and when we toggle the bit in OAM memory the "Large" size. Be careful, it's not a zoom of the sprite, it's only a way to define two different sizes.  
 
 Here is a table showing how we can handle that :  
 
@@ -33,7 +33,7 @@ Here is a table showing how we can handle that :
 
 Last thing to take into account is that you don’t want the background color of your sprite to be visible.  
 
-If you have a round sprite, like a ball, you wouldn’t want the square border to show. In order to do such behaviour, the first color of the psrite palette is used for the background to be ‘removed’, or rather set as the transparent color (only 1 transparent color per sprite).  
+If you have a round sprite, like a ball, you wouldn’t want the square border to show. In order to do such behavior, the first color of the sprite palette is used for the background to be ‘removed’, or rather set as the transparent color (only 1 transparent color per sprite).  
 
 You have to choose your transparent color : the best is magenta, as you don’t use it very often (red : 255, green : 0, blue : 255), or some use black ...  
  
@@ -62,7 +62,7 @@ The first table has room for 128 entries, an entry for each sprite :
             Note: the 'c' in byte 4 is the MOST significant bit in the 9-bit char #.  
 ```
 
-The second table is 32 bytes and has 2 bits for each sprite (each byte contains information for 4 sprites.)  The lowest significant bits hold the information for the lower object numbers (for example, the least significant two bits of the first byte are for object #0.)  Bit 0 (and 2, 4, 6) is the size toggle bit and bit 1 (3, 5, 7) is the most ignificant bit of the X coordinate. 
+The second table is 32 bytes and has 2 bits for each sprite (each byte contains information for 4 sprites.)  The lowest significant bits hold the information for the lower object numbers (for example, the least significant two bits of the first byte are for object #0.)  Bit 0 (and 2, 4, 6) is the size toggle bit and bit 1 (3, 5, 7) is the most significant bit of the X coordinate. 
 
 ```
   bit 0/2/4/6 of byte OBJ/4: x   x: X most significant bit coordinate
@@ -76,7 +76,7 @@ Sprites are interleaved in Video RAM. In other words, when using 32x32 tiles, th
 When the sprites are larger than 8x8, they are arranged in columns, followed by rows of 8x8 tiles.  For example, a 32x32 sprite is stored like this:
 
 ```
-  Byte Offset  0     32    64     96     128   160   192    224    256    ... et cetera.  
+  Byte Offset  0     32    64     96     128   160   192    224    256    ... and so on.  
   Tile Coord   (0,0) (8,0) (16,0) (24,0) (0,8) (8,8) (16,8) (24,8) (0,16) ... and so on.  
 ```
 
@@ -140,12 +140,12 @@ extern char palsprite;
 ## Init the sprites
 
 **PVSnesLib** used an internal table to store sprites OAM. This table is named **oamMemory** and it is used to address the two OAM tables of the SNES.  
-You don't have to declare another table to handle sprite OAM, and the include files shipped with **PVSnesLib** allows your homebrew to know the oamMemory table.  
+You don't have to declare another table to handle sprite OAM, and the include files shipped with **PVSnesLib** allows your homebrew to know the oam memory table.  
 ```
-unsigned char oamMemory[128*4+8*4]; // to address oma table low and high
+unsigned char oamMemory[128*4+8*4]; // to address OAM table low and high
 ```
 
-During **consoleInit()** process, this table is init, so don't care about that LOL ! The **consoleInit** does this call :  
+During **consoleInit()** process, this table is init, so don't care about that ! The **consoleInit** does this call :  
 
 ```
   // Init sprites
@@ -168,7 +168,7 @@ The parameters are :
 
 **&gfxpsrite**  address of sprite graphics  
 
-**(&gfxpsrite_end-&gfxpsrite)** length of sprites graphics (so we did subtraction of end adress and beginning addres, easy isn't it ;-)  
+**(&gfxpsrite_end-&gfxpsrite)** length of sprites graphics (so we did subtraction of end address and beginning address, easy isn't it ;-)  
 
 **&palsprite** address of palette  
 
@@ -179,11 +179,11 @@ The parameters are :
 **OBJ_SIZE16_L32** size of sprite, you can use **OBJ_SIZE8_L16**, **OBJ_SIZE8_L32**, **OBJ_SIZE8_L64**, **OBJ_SIZE16_L32**, **OBJ_SIZE16_L64** and **OBJ_SIZE32_L64**. It represent the size when using **small** or **large** attribute with **oamSetEx** function, so OBJ_SIZE16_L32 mean the size is 16 pixel for small size (OBJ_SMALL) and 32 for large size (OBJ_LARGE).
 
 
-Also, if you put all graphics in VRAM during one process (with a DMA copy for example) and want to change only the size and address of sprites, you can use the function **oamInitGfxAttr()** with two paremeters : the address and the size.  
+Also, if you put all graphics in VRAM during one process (with a DMA copy for example) and want to change only the size and address of sprites, you can use the function **oamInitGfxAttr()** with two parameters : the address and the size.  
 
 ## Drawing the sprites
 
-Drawing a sprite on screen is the same thing that tranfering **OAM** variables to **SNES OAM**. This tranfert can only be done during Vblank. But don't care about that, PVSnesLib does that for you :-D. the only thing to do is the definition of each sprite attribute in **OAM** variables.  
+Drawing a sprite on screen is the same thing that transferring **OAM** variables to **SNES OAM**. This transfer can only be done during Vblank. But don't care about that, PVSnesLib does that for you :-D. the only thing to do is the definition of each sprite attribute in **OAM** variables.  
 
 The function **oamSet()** does that : oamSet(id,  xspr, yspr, priority, hflip, vflip, gfxoffset, paletteoffset) .  
 
@@ -215,7 +215,7 @@ For the next parameters, you can use **OBJ_SMALL** or **OBJ_LARGE** for the size
 
 You have two ways to move a sprite. You can use the **oamSet()** function and changing the x and y coordinates and you can also use the **oamSetXY()** function with only 3 parameters : **id** (hum, remember how to handle it now, 0, 4 , 8 and so on ;-) ), x and y coordinates.  
 
-Of course, if you need to change also the fliping of the sprite, use the **oamset** function, like we do in the animated sprite example.  
+Of course, if you need to change also the flipping of the sprite, use the **oamset** function, like we do in the animated sprite example.  
 
 ```c
 	// Wait for nothing :P
