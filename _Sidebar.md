@@ -16,9 +16,9 @@
   1. **[Map Engine 3: Display map on SNES (I)]( https://github.com/alekmaul/pvsneslib/wiki/Display-map-on-SNES-(1))**
 
 # Misc #
-  1. **[Roadmap](https://github.com/alekmaul/pvsneslib/wiki/Roadmap)**
-  1. **[Tips and Bugs](https://github.com/alekmaul/pvsneslib/wiki/Tips-and-Bugs)**
-  1. **[Community code](https://github.com/alekmaul/pvsneslib/wiki/Community-code)**
   1. **[Contribute to PVSnesLib](https://github.com/alekmaul/pvsneslib/wiki/Contribute-to-PVSnesLib)**
   1. **[Community FAQ](https://github.com/alekmaul/pvsneslib/wiki/Community-FAQ)**
+  1. **[Community code](https://github.com/alekmaul/pvsneslib/wiki/Community-code)**
+  1. **[Roadmap](https://github.com/alekmaul/pvsneslib/wiki/Roadmap)**
+  1. **[Tips and Bugs](https://github.com/alekmaul/pvsneslib/wiki/Tips-and-Bugs)**
   1. **[SNES ROM Header **todo**](https://github.com/alekmaul/pvsneslib/wiki/SNES-ROM-Header)**
