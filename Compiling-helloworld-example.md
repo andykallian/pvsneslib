@@ -155,7 +155,9 @@ and then
 ```bash
 make 
 ```
-It will produce a large amount of line to explain what's going on (it's also here where you can see errors).
+It will produce a large amount of lines to explain what's going on (it's also here where you can see errors).
+
+![image](https://github.com/alekmaul/pvsneslib/assets/2528347/78dadffa-bc9f-4391-b99c-066325c5c8ce)
 
 you will have a **.sfc** file produced name **hello_world.sfc**.
 
