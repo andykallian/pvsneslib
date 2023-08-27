@@ -121,6 +121,8 @@ That's all, just after, we put the text and wait for an inifite loop!
 
 # How the graphic of the font is used in the code
 
+![image](https://github.com/alekmaul/pvsneslib/assets/2528347/4110969c-5ab2-4181-9446-8d8fcc27e5e4)
+
 The font is declare outisde the **hello_world.c** file, but we need to add an external declaration to allow **consoleInitText**  to work:
 
 ```bash
