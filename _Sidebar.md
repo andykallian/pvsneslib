@@ -8,8 +8,7 @@
 # Programming #
   1. **[Introduction](https://github.com/alekmaul/pvsneslib/wiki/Introduction)**
   1. **[Hello World example](https://github.com/alekmaul/pvsneslib/wiki/Compiling-helloworld-example)**
-  1. **[Use joypads](https://github.com/alekmaul/pvsneslib/wiki/Manage-Joypad)**
-  1. **[Display console text](https://github.com/alekmaul/pvsneslib/wiki/Output-Text-Screen)**
+  1. **[Input and Output](https://github.com/alekmaul/pvsneslib/wiki/Input-and-Output)**
   1. **[Sprites](https://github.com/alekmaul/pvsneslib/wiki/Sprites)**
   1. **[Dynamic Sprites](https://github.com/alekmaul/pvsneslib/wiki/Dynamic-Sprites)**
   1. **[Backgrounds](https://github.com/alekmaul/pvsneslib/wiki/Backgrounds)**
