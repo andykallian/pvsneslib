@@ -6,22 +6,22 @@ The remaining entries here on the unofficial FAQ are maintained by the community
 
 - [I want to contribute to this project](#i-want-to-contribute-to-this-project)
 - [I want to ask something](#i-want-to-ask-something)
-- [I found a bug. What can i do ?](#i-found-a-bug-what-can-i-do-)
-- [Can we create Hirom games with the lib ?](#can-we-create-hirom-games-with-the-lib-)
-- [Why is it called PVSnesLib ?](#why-is-it-called-pvsneslib-)
+- [I found a bug. What can i do?](#i-found-a-bug-what-can-i-do-)
+- [Can we create Hirom games with the lib?](#can-we-create-hirom-games-with-the-lib-)
+- [Why is it called PVSnesLib?](#why-is-it-called-pvsneslib-)
 - [I would like to share my project with PVSneslib community](#i-would-like-to-share-my-project-with-pvsneslib-community)
-- [Is it possible to use Docker ?](#is-it-possible-to-use-docker-)
-- [How to update WLA submodule to the latest commit ?](#how-to-update-wla-submodule-to-the-latest-commit-)
+- [Is it possible to use Docker?](#is-it-possible-to-use-docker-)
+- [How to update WLA submodule to the latest commit?](#how-to-update-wla-submodule-to-the-latest-commit-)
 
 **[About the lib](#about-the-lib)**
 
-- [Is it possible to rotate a picture ?](#is-it-possible-to-rotate-a-picture-)
-- [What is the function to clear text ?](#what-is-the-function-to-clear-text-)
-- [How can i display special characters in text ?](#how-can-i-display-special-characters-in-text-)
-- [How to create random number ?](#how-to-create-random-number-)
-- [What is the goal of each tool ?](#what-is-the-goal-of-each-tool-)
-- [What are .it files ?](#what-are-it-files-)
-- [How to convert .mid to .it ?](#how-to-convert-mid-to-it-)
+- [Is it possible to rotate a picture?](#is-it-possible-to-rotate-a-picture-)
+- [What is the function to clear text?](#what-is-the-function-to-clear-text-)
+- [How can i display special characters in text?](#how-can-i-display-special-characters-in-text-)
+- [How to create random number?](#how-to-create-random-number-)
+- [What is the goal of each tool?](#what-is-the-goal-of-each-tool-)
+- [What are .it files?](#what-are-it-files-)
+- [How to convert .mid to .it?](#how-to-convert-mid-to-it-)
 
 **[Common errors](#common-errors)**
 
@@ -29,42 +29,43 @@ The remaining entries here on the unofficial FAQ are maintained by the community
   - [Miscellaneous](#miscellaneous)
     - [I want to contribute to this project](#i-want-to-contribute-to-this-project)
     - [I want to ask something](#i-want-to-ask-something)
-    - [I found a bug. What can i do ?](#i-found-a-bug-what-can-i-do-)
-    - [Can we create HiROM games with the lib ?](#can-we-create-hirom-games-with-the-lib-)
-    - [Why is it called PVSnesLib ?](#why-is-it-called-pvsneslib-)
+    - [I found a bug. What can i do?](#i-found-a-bug-what-can-i-do-)
+    - [Can we create HiROM games with the lib?](#can-we-create-hirom-games-with-the-lib-)
+    - [Why is it called PVSnesLib?](#why-is-it-called-pvsneslib-)
     - [I would like to share my project with PVSneslib community](#i-would-like-to-share-my-project-with-pvsneslib-community)
-    - [Is it possible to use Docker ?](#is-it-possible-to-use-docker-)
-    - [How to update WLA submodule to the latest commit ?](#how-to-update-wla-submodule-to-the-latest-commit-)
+    - [Is it possible to use Docker?](#is-it-possible-to-use-docker-)
+    - [How to update WLA submodule to the latest commit?](#how-to-update-wla-submodule-to-the-latest-commit-)
   - [About the lib](#about-the-lib)
-    - [Is it possible to rotate a picture ?](#is-it-possible-to-rotate-a-picture-)
-    - [What is the function to clear text ?](#what-is-the-function-to-clear-text-)
-    - [How can I display special characters in text ?](#how-can-i-display-special-characters-in-text-)
-    - [How to create random number ?](#how-to-create-random-number-)
-    - [What is the goal of each tool ?](#what-is-the-goal-of-each-tool-)
-    - [What are .it files ?](#what-are-it-files-)
-    - [How to convert .mid to .it ?](#how-to-convert-mid-to-it-)
-    - [Why i get "error 5" with smconv when compiling a .it file saved with OpenMPT ?](#how-to-convert-mid-to-it-)
+    - [Is it possible to rotate a picture?](#is-it-possible-to-rotate-a-picture-)
+    - [What is the function to clear text?](#what-is-the-function-to-clear-text-)
+    - [How can I display special characters in text?](#how-can-i-display-special-characters-in-text-)
+    - [How to create random number?](#how-to-create-random-number-)
+    - [What is the goal of each tool?](#what-is-the-goal-of-each-tool-)
+    - [What are .it files?](#what-are-it-files-)
+    - [How to convert .mid to .it?](#how-to-convert-mid-to-it-)
+    - [Why i get "error 5" with smconv when compiling a .it file saved with OpenMPT?](#how-to-convert-mid-to-it-)
   - [Common errors](#common-errors)
-    - [What is CHECK\_HEADERS error ?](#what-is-check_headers-error-)
+    - [What is CHECK\_HEADERS error?](#what-is-check_headers-error-)
+    - [What is CHECKSUM error in emulator?](#what-is-checksum-error-)
     - [Colors of my loaded picture are wrong](#colors-of-my-loaded-picture-are-wrong)
     - [I get FIX\_LABELS error when I build my project](#i-get-fix_labels-error-when-i-build-my-project)
-    - [Why HDMA channel 0 doesn't work ?](#why-hdma-channel-0-doesnt-work-)
+    - [Why HDMA channel 0 doesn't work?](#why-hdma-channel-0-doesnt-work-)
     - [Soundbank files are missing in music samples](#soundbank-files-are-missing-in-music-samples)
     - [My music has some glitches during playing](#my-music-has-some-glitches-during-playing)
     - [Programmer's Notepad adds other text when I compile](#programmers-notepad-adds-other-text-when-i-compile)
     - [Font system doesn't work with some background mode](#font-system-doesnt-work-with-some-background-mode)
-    - [How to build tcc 816 provided with PVSnesLib sources ?](#how-to-build-tcc-816-provided-with-pvsneslib-sources-)
+    - [How to build tcc 816 provided with PVSnesLib sources?](#how-to-build-tcc-816-provided-with-pvsneslib-sources-)
     - [I get the error "echo: command not found"](#i-get-the-error-echo-command-not-found)
     - [On Linux i get : "fatal error: bits/libc-header-start.h"](#on-linux-i-get--fatal-error-bitslibc-header-starth)
     - [On Mac OS i get : "sed: 1: "hello_world.sym": extra characters at the end of h command"](#on-Mac-OS-i-get--sed-1--hello-world-sym-extra-characters-at-the-end-of-h-command)
     - [Using malloc with PVSneslib](#using-malloc-with-pvsneslib)
   - [Maps](#maps)
-    - [How to create maps with 16x16 tiles ?](#how-to-create-maps-with-16x16-tiles-)
+    - [How to create maps with 16x16 tiles?](#how-to-create-maps-with-16x16-tiles-)
     - [Backgrounds begin at x = 0 and y = 1](#backgrounds-begin-at-x--0-and-y--1)
 
 **[Maps](#maps)**
 
-- [How to create maps with 16x16 tiles ?](#how-to-create-maps-with-16x16-tiles-)
+- [How to create maps with 16x16 tiles?](#how-to-create-maps-with-16x16-tiles-)
 - [Backgrounds begin at x = 0 and y = 1](#backgrounds-begin-at-x--0-and-y--1)
 ---
 
@@ -78,15 +79,15 @@ PVSneslib's main developer and community will be happy! You can create a fork of
 
 There is no more official forum for PVSneslib. The best thing to do is to ask on [Snesdev](https://forums.nesdev.com/viewforum.php?f=12) forum or on the PVSnesLib Discord channel.
 
-### I found a bug. What can i do ?
+### I found a bug. What can i do?
 
 Please create a minimal code to reproduce it then create an [issue](https://github.com/alekmaul/pvsneslib/issues) on Github explaining the bug.
 
-### Can we create HiROM games with the lib ?
+### Can we create HiROM games with the lib?
 
 No, PVSnesLib currently works with LoROM games only but it may be implemented in the future !
 
-### Why is it called PVSnesLib ?
+### Why is it called PVSnesLib?
 
 The library could not be named LibSnes because another project with the same name already existed.
 The "PV" letters comes from **P**ortablde**V**, the name of Alekmaul's [website](https://www.portabledev.com).
@@ -97,11 +98,11 @@ That's great! The community will probably be happy to study it. However, we cann
 
 In this case, we recommend you to upload it on your GitHub page and create a wiki page here to present it.
 
-### Is it possible to use Docker ?
+### Is it possible to use Docker?
 
 Yes, some people worked on it and created a docker image that you can find [here](https://github.com/Crazy-Piri/pvsneslib-docker)
 
-### How to update WLA submodule to the latest commit ?
+### How to update WLA submodule to the latest commit?
 
 You just need to execute `git submodule update --remote --merge` but please keep in mind that upgrading WLA may impact PVSnesLib. Be sure that you fully test it.
 
@@ -109,11 +110,11 @@ You just need to execute `git submodule update --remote --merge` but please keep
 
 ## About the lib
 
-### Is it possible to rotate a picture ?
+### Is it possible to rotate a picture?
 
 Only background in mode7 can be rotate.
 
-### What is the function to clear text ?
+### What is the function to clear text?
 
 There is no function to clear text directly. However, you can use spaces to replace text like this:
 ```
@@ -122,18 +123,18 @@ consoleDrawText(1,2,"some text on the screen");
 consoleDrawText(1,2,"                       ");
 ```
 
-### How can I display special characters in text ?
+### How can I display special characters in text?
 
 PVSnesLib only lets you manage characters from ASCII code 32 to 127. If you need other characters, you have to implement it yourself (and share it with the community !).
 For more information about text in PVSnesLib, you can consult [this page](https://github.com/alekmaul/pvsneslib/wiki/Input-and-Output)
 
-### How to create random number ?
+### How to create random number?
 
 If you want to create random numbers, you can use the rand() function available in PVSnesLib. You do not need to initialise anything as it is managed by the library.
 The rand() function will work only if you assign its result to a `u16` variable type.
 To limit numbers between values like 0 and 50, you have to do `(rand() % 50)`. But keep in mind that modulo, multiplication and division operations are very very slow on the 65C816 processor used by SNES. So try to avoid using it when possible.
 
-### What is the goal of each tool ?
+### What is the goal of each tool?
 
 - bin2txt : convert binary file to text file to include it directly in your project. It is used to include the file generated (with TASM tool) for spc700 CPU (audio) directly in PVSneslib source code.
 
@@ -154,16 +155,16 @@ Remember that we have a lot of constraints on SNES and each parameter of the too
 
 - wla-65816 and wlalink : these tools are the assembler to convert your .asm files to .obj files (code readable by 65c816). Wlalink is the linker that "merges" all files.
 
-### What are .it files ?
+### What are .it files?
 
 .it files are impulse tracker files, a music format similar to the SNES one (.spc files). It is used because it manages many channels like the SNES and a tool is provided with PVSnesLib (smconv) to convert it to soundbanks.
 [Schism Tracker](http://schismtracker.org/) can be used to open this files, it is a reimplementation of Impulse Tracker
 
-### How to convert .mid to .it ?
+### How to convert .mid to .it?
 
 [OpenMPT (Open ModPlug Tracker)](https://openmpt.org/features) is able to do it !
 
-### Why i get "error 5" with smconv when compiling a .it file saved with OpenMPT ?
+### Why i get "error 5" with smconv when compiling a .it file saved with OpenMPT?
 
 OpenMPT enables IT sample compression by default now, which is not supported.
 To turn it off, go to OpenMPT > View > Setup :
@@ -182,9 +183,13 @@ Set them both to 0.
 
 ## Common errors
 
-### What is CHECK_HEADERS error ?
+### What is CHECK_HEADERS error?
 
 Your game needs to be built with the same parameters that we have in PVSnesLib header. This is because .obj files from the library are embedded with .obj files of you project which contains its own header too. It is an improvement to do with PVSnesLib!
+
+### What is CHECKSUM error in emulator?
+
+Your game will have a correct checksum if the ROM is a power-of-two size.  ROMs that are not a power-of-two require mirroring when calculating the checksum (https://snes.nesdev.org/wiki/ROM_header#Non_Power-of-2_ROM_Size). PVSneslib does not do this mirroring.
 
 ### Colors of my loaded picture are wrong
 
@@ -250,7 +255,7 @@ and do not forget to protect your header files from multiple inclusion:
 #endif
 ```
 
-### Why HDMA channel 0 doesn't work ?
+### Why HDMA channel 0 doesn't work?
 
 HDMA channel 0 is used internally for all DMA functions.
 
@@ -334,7 +339,7 @@ You will notice this when your project gives a strange error during compilation.
 The output system is only available for **BG_MODE1**. If you need it in other modes, you need to develop it.
 
 
-### How to build tcc 816 provided with PVSnesLib sources ?
+### How to build tcc 816 provided with PVSnesLib sources?
 
 Go to the tcc-65816 directory, then execute **./configure** command to create the config.mak file.
 If you are on windows and get an error like "'.' is not recognized as an internal or external command", you probably need to execute the **sh** command before.
@@ -364,7 +369,7 @@ Instead, you need to declare an array with a fixed size, u16 myHudBuffer[160] in
 
 ## Maps
 
-### How to create maps with 16x16 tiles ?
+### How to create maps with 16x16 tiles?
 
 It is not possible to load maps with 16x16 tiles with the existing version of gfx4snes. You need to use 8x8 tiles or update the tool !
 The "-s" parameter (for "graphic Size") in gfx4snes is only applied to sprites.

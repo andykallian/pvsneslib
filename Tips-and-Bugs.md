@@ -72,6 +72,10 @@ This structure is 10 bytes instead of 8. (Is there a point in aligning stuff on 
 
 What you can do is to set attribute((packed)) on all members of the struct to solve it.
 
+### increment of a variable in loop (or not)  
+
+i++ or i-- instructions worked very poorly on the compiler, and by extension it penalizes the for() loops which often have this writing, so switching to while() with -= or += commands does a lot of good (it's more than 10% gain on loops).  
+
 ### Shiru's tips
 
 Here are some others tips that [Shiru](http://shiru.untergrund.net/articles/programming_nes_games_in_c.htm) wrote about cc65 compiler but they can also applied to 816-tcc compiler.  
