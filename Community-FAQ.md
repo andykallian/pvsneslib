@@ -46,7 +46,7 @@ The remaining entries here on the unofficial FAQ are maintained by the community
     - [Why i get "error 5" with smconv when compiling a .it file saved with OpenMPT?](#how-to-convert-mid-to-it)
   - [Common errors](#common-errors)
     - [What is CHECK\_HEADERS error?](#what-is-check_headers-error)
-    - [What is CHECKSUM error in emulator?](#what-is-checksum-error)
+    - [What is CHECKSUM error in emulator?](#what-is-checksum-error-in-emulator)
     - [Colors of my loaded picture are wrong](#colors-of-my-loaded-picture-are-wrong)
     - [I get FIX\_LABELS error when I build my project](#i-get-fix_labels-error-when-i-build-my-project)
     - [Why HDMA channel 0 doesn't work?](#why-hdma-channel-0-doesnt-work)
