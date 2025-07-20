@@ -1,5 +1,3 @@
-**update in progress **
-
 Background is a term in 2D graphics programming which refers to the image displayed on background of screen, in opposite of sprites. The Snes has dedicated hardware for dealing with multiple types of backgrounds.
 
 ## SNES Background Specs
