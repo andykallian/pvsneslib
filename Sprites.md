@@ -112,10 +112,9 @@ sprites.pic: sprites.bmp
 	$(GFXCONV) -s 16 -o 16 -u 16 -t bmp -i $<
 ```
 
-  gs16 because we have 16 pix width   
-  pc16 because we can only use 16 colors  
-  po16 because we are going to use only one palette of 16 colors  
-  n because we do not have a border around the sprites  
+  **s 16** because we have 16 pix width   
+  **o 16** because we are going to use only one palette of 16 colors  
+  **u 16** because we are going to use the 16 colors mode  
   
 Then, create a **data.asm** file with the converted file include in it, like you can see in **PVSnesLib** examples. This file will be included with your project and linked with the graphics.  
 
