@@ -37,9 +37,12 @@ extern char tilfont, palfont;
 //---------------------------------------------------------------------------------
 int main(void)
 {
+    // Initialize SNES
+    consoleInit();
+
     // Initialize text console with our font
-    consoleSetTextMapPtr(0x6800);
-    consoleSetTextGfxPtr(0x3000);
+    consoleSetTextVramBGAdr(0x6800);
+    consoleSetTextVramAdr(0x3000);
     consoleSetTextOffset(0x0100);
     consoleInitText(0, 16 * 2, &tilfont, &palfont);
 
@@ -68,22 +71,19 @@ int main(void)
 }
 ```
 
-The SNES initialization is now handled automatically by the runtime system, so you can start directly with your program logic. If you need console text functionality, you can initialize the text console with:
+Each main function must begin with the SNES initialization via:
 
 ```bash
-    // Initialize text console with our font
-    consoleSetTextMapPtr(0x6800);
-    consoleSetTextGfxPtr(0x3000);
-    consoleSetTextOffset(0x0100);
-    consoleInitText(0, 16 * 2, &tilfont, &palfont);
+    // Initialize SNES
+    consoleInit();
 ```
 
 Then, as we want to use the default font engine, we need to prepare text VRAM entries with:
 
 ```bash
     // Initialize text console with our font
-    consoleSetTextMapPtr(0x6800);
-    consoleSetTextGfxPtr(0x3000);
+    consoleSetTextVramBGAdr(0x6800);
+    consoleSetTextVramAdr(0x3000);
     consoleSetTextOffset(0x0100);
     consoleInitText(0, 16 * 2, &tilfont, &palfont);
 ```
