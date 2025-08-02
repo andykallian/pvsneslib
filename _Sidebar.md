@@ -11,6 +11,7 @@
   1. **[Input and Output](https://github.com/alekmaul/pvsneslib/wiki/Input-and-Output)**
   1. **[Sprites](https://github.com/alekmaul/pvsneslib/wiki/Sprites)**
   1. **[Dynamic Sprites](https://github.com/alekmaul/pvsneslib/wiki/Dynamic-Sprites)**
+  1. **[Meta Sprites](https://github.com/alekmaul/pvsneslib/wiki/Meta-Sprites)**
   1. **[Backgrounds](https://github.com/alekmaul/pvsneslib/wiki/Backgrounds)**
   1. **[Sounds and Musics](https://github.com/alekmaul/pvsneslib/wiki/Sounds-and-Musics)**
   1. **[HiRom and FastRom](https://github.com/alekmaul/pvsneslib/wiki/HiRom-and-FastRom)**
