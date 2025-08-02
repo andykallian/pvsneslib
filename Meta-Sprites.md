@@ -2,6 +2,8 @@ A metasprite is a larger sprite made up from a collection of smaller individual 
 
 Different frames of the same metasprites can share tile data. All together represent one single object.  
 
+<img width="224" height="192" alt="metasprite_tut00" src="https://github.com/user-attachments/assets/94fed4b8-d29e-4e05-9dae-3b6aea823c2b" />
+
 ## Metasprite support  
 
 The api supports metasprites with 32x32, 16x16 and 8x8 sprites width and height.  you **can't** mixed different sizes for one metasprite.
@@ -41,6 +43,8 @@ u8 props         Property Flags (palette and priority, flip x/y will be added la
 You can use **gfx4snes**, shipped with **devkitsnes** to convert your bitmap files into a correct format for PVSnesLib. Remember that the size must be a multiple of 8 pixels 8x8, 16x16 or 32x32.  
 
 You can of course put more than one metasprite in the same graphic file.  
+
+<img width="32" height="192" alt="metasprite_tut02" src="https://github.com/user-attachments/assets/2e990fba-e21a-4303-ae10-141110040e5c" />
 
 Here is an example of a makefile instruction to convert a metasprite of 16 pix width / height with **gfx4snes**.  
 
@@ -129,5 +133,7 @@ Then when you want to display a metasprite, you have to use the function **oamMe
     // draw the sprite
     oamMetaDraw16(1, 64,160, (u8 *) spritehero_metasprites[0], OBJ_SMALL);
 ```
+
+<img width="508" height="496" alt="metasprite_tut01" src="https://github.com/user-attachments/assets/7920262e-27f0-4542-8b7d-372bdf90f6d3" />
 
 See the Dynamic Engine meta sprite and Metasprite examples shipped with PVSnesLib for the complete source code.
