@@ -50,7 +50,7 @@ spritehero.pic: spritehero.png
 	@echo convert meta sprites as 16px  ... $(notdir $@)
 	$(GFXCONV) -s 16 -o 16 -u 16 -T -X 32 -Y 48 -P 2 -i $<
 ```
-
+ 
   **s 16** because we have 16 pix width sprite mode
   **o 16** because we are going to use only one palette of 16 colors  
   **u 16** because we are going to use the 16 colors mode  
