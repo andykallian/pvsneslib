@@ -1,6 +1,7 @@
 A dynamic sprite is a sprite where graphics are dynamically uploads to video ram (VRAM). So only one frame of the sprite is in VRAM at a given moment.  
 More specifically, PVSneslib allows dynamic uploads to VRAM with sprite functions, allowing you basically as many frames in a sprite as you like.  
 
+![dynamicsprite_tut00](https://github.com/user-attachments/assets/d37edb98-c81e-4956-8075-1177eb5bba5e)
 
 ## Dynamic sprites support  
 
@@ -18,7 +19,7 @@ It contains all the sprite definitions for a specific sprite. It has 128 entries
     s16 oamx;        x position on the screen  
     s16 oamy;        y position on the screen  
     u16 oamframeid;  frame index in graphic file of the sprite  
-    u8 oamattribute; sprite attribute value (vhoopppc v : vertical flip h: horizontal flip o: priority bits p: palette num c : last byte of tile num)  
+    u8 oamattribute; sprite attribute value (vhoopppc vh : vertical/horizontal flip o: priority bits p: palette num c : last byte of tile num)  
     u8 oamrefresh;   =1 if we need to load graphics from graphic file  
     u8 *oamgraphics; pointer to graphic file   
     u16 dummy1;      to be 16 aligned  
@@ -42,6 +43,8 @@ t_sprites *psprmen;                                                 // ptr to sp
 ## Converting with gfx4snes
 
 You can use **gfx4snes**, shipped with **devkitsnes** to convert your bitmap files into a correct format for PVSnesLib. Remember that the size must be a multiple of 8 pixels 8x8, 16x16, 32x32 or 64x64.  
+
+<img width="64" height="16" alt="dynamicsprite_tut01" src="https://github.com/user-attachments/assets/b1e71ec9-8d49-4837-9059-651d069fd5b8" />
 
 You can of course put more than one sprite in the same graphic file, but as dynamic sprite also has the pointer to graphic files, you can delcar more animation in multiple files.  
 
