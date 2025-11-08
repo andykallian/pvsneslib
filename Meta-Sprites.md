@@ -85,7 +85,7 @@ During initialization process in your C files, you will have to declare some ext
 
 ## Playing with dynamic engine and metasprites  
 
-In your main C file, initialize the dynamic sprite engine with the correct avlue for large and small sprite mode.  
+In your main C file, initialize the dynamic sprite engine with the correct value for large and small sprite mode.  
 
 In our example, we use 0x0000 for large sprites and 0x1000 for small ones, with the sprites 32x32 and 16x16 for large and small sprites.  
 We also need to add the refresh flag to the 1st oambuffer entry to allow the dynamic engine to store the first graphics in vram.  
@@ -106,9 +106,9 @@ We also need to load the palette in Vram for the complete metasprite structure.
     setPalette(&spritehero_pal, 128 + 0 * 16, 16 * 2);
 ```
 
-When you want to display your meta sprite, you will just need to refer to the correct index of sprite (**1** in our example, the coordinates to the metapsrite, the aaddress of the graphics and the fact we need to use small or large sprites.  
+When you want to display your meta sprite, you will just need to refer to the correct index of sprite (**1** in our example, the coordinates to the metapsrite, the address of the graphics and the fact we need to use small or large sprites.  
 
-Regarding our example, as the metasprite is made of **16x16** sprites and the pritemode is **OBJSIZE16_L32, we will have to specify PVSlesLib to use the small table entry for this one.  
+Regarding our example, as the metasprite is made of **16x16** sprites and the spritemode is **OBJSIZE16_L32**, we will have to specify PVSnesLib to use the small table entry for this one.  
 
 ```
     // draw the sprite
@@ -135,5 +135,20 @@ Then when you want to display a metasprite, you have to use the function **oamMe
 ```
 
 <img width="508" height="496" alt="metasprite_tut01" src="https://github.com/user-attachments/assets/7920262e-27f0-4542-8b7d-372bdf90f6d3" />
+
+## Refresh the sprites  
+
+The sprite must be refresh at each frame, with the call of **oamInitDynamicSpriteEndFrame** function at the end of your current frame process.  
+
+```
+    // prepare next frame and wait vblank
+    oamInitDynamicSpriteEndFrame();
+    WaitForVBlank();
+    oamVramQueueUpdate();
+
+```
+
+As you see, you also have to update VRAM with a call of **oamVramQueueUpdate** function.  
+
 
 See the Dynamic Engine meta sprite and Metasprite examples shipped with PVSnesLib for the complete source code.
