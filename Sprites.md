@@ -119,24 +119,20 @@ sprites.pic: sprites.bmp
   **o 16** because we are going to use only one palette of 16 colors  
   **u 16** because we are going to use the 16 colors mode  
   
-Then, create a **data.asm** file with the converted file include in it, like you can see in **PVSnesLib** examples. This file will be included with your project and linked with the graphics.  
+Then, create a **data.asm** file with the converted file include in it, like you can see in **PVSnesLib** examples. This file will be included with your project and linked with the graphics. **gfx4snes** helps you and create the definitions in a **xxx_data.as** file.    
 
 ```
 .include "hdr.asm"
 
 .section ".rodata1" superfree
-gfxpsrite: .incbin "sprites.pic"
-gfxpsrite_end:
-
-palsprite: .incbin "sprites.pal"
+.include "sprites_data.as"
 .ends
 ```
 
-During initialization process in your C files, you will have to declare some external variables to allow functions to know which graphic sprites you are going to use, regarding the name you entered in your **data.asm** file.  
+During initialization process in your C files, you will have to declare some external variables to allow functions to know which graphic sprites you are going to use, regarding the name used in your **data.asm** file. Again, **gfx4snes** helps you and create the external definitions in a **xxx.inc** file.    
 
 ```
-extern char gfxpsrite, gfxpsrite_end;
-extern char palsprite;
+#include "sprites.inc"
 ```
 
 ## Init the sprites
