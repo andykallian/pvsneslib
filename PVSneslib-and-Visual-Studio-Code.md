@@ -20,7 +20,7 @@ _If you did not installed PVSneslib, please follow the instructions in [wiki pag
 
 Once the framework is installed (from latest [release](https://github.com/alekmaul/pvsneslib/releases/latest) version or from [repository](https://github.com/alekmaul/pvsneslib/wiki/Compiling-from-sources)), go in the root folder of your installation then open **.vscode** folder which contains 2 files.
 
-You can find a sample in the [vscode-template folder](https://github.com/alekmaul/pvsneslib/tree/master/vscode-template) available in the root of the repository.
+You can find a sample in the [vscode-template folder](https://github.com/alekmaul/pvsneslib/tree/master/vscode-template) available in the root of the repository^or inside the **vscode-template** floder shipped with the release of PVSnesLib.
 
 Open c_cpp_properties.json with your favorite text editor and update the **pvsneslibPath** variable to match your include directories in the installation folder.
 
