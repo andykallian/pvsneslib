@@ -58,7 +58,8 @@ The remaining entries here on the unofficial FAQ are maintained by the community
     - [I get the error "echo: command not found"](#i-get-the-error-echo-command-not-found)
     - [On Linux i get : "fatal error: bits/libc-header-start.h"](#on-linux-i-get--fatal-error-bitslibc-header-starth)
     - [On Mac OS i get : "sed: 1: "hello_world.sym": extra characters at the end of h command"](#on-Mac-OS-i-get--sed-1--hello-world-sym-extra-characters-at-the-end-of-h-command)
-    - [Using malloc with PVSneslib](#using-malloc-with-pvsneslib)
+    - [Using malloc with PVSneslib](#using-malloc-with-pvsneslib)  
+    - [Random numbers are always the same](#Random-numbers-are-always-the-same)  
   - [Maps](#maps)
     - [How to create maps with 16x16 tiles?](#how-to-create-maps-with-16x16-tiles)
     - [Backgrounds begin at x = 0 and y = 1](#backgrounds-begin-at-x--0-and-y--1)
@@ -365,6 +366,26 @@ Please read the [installation page](https://github.com/alekmaul/pvsneslib/wiki/I
 I want to use malloc in my program, so I am trying something like this: u16 *myHudBuffer = (u16*)malloc(160*sizeof(u16)); but it is not working. malloc requires stdlib.h which I think does not work with PVSnesLib.
 
 Instead, you need to declare an array with a fixed size, u16 myHudBuffer[160] in this case.
+
+### Random numbers are always the same    
+
+Random numbers are deterministic as they begin with the powering of the console.  You need to put some useless rand() calls in some loop to be more random with the numbers generated.  
+
+```
+...
+u16 randunsued;
+```
+
+in a loop where you wait a button pressed
+
+```
+    // wait for start game or stuffs like taht
+    while(1) {
+...
+      WaitForVBlank();
+      randunsued = rand();
+    }
+```
 
 
 ## Maps
