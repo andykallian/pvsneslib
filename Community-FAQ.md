@@ -373,7 +373,7 @@ Random numbers are deterministic as they begin with the powering of the console.
 
 ```
 ...
-u16 randunsued;
+u16 randunused;
 ```
 
 in a loop where you wait a button pressed
@@ -383,7 +383,7 @@ in a loop where you wait a button pressed
     while(1) {
 ...
       WaitForVBlank();
-      randunsued = rand();
+      randunused = rand();
     }
 ```
 
