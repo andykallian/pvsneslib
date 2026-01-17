@@ -60,8 +60,8 @@ The first table has room for 128 entries, an entry for each sprite :
 ```
   Byte 1    xxxxxxxx    x: X coordinate  
   Byte 2    yyyyyyyy    y: Y coordinate  
-  Byte 3    cccccccc    c: starting character (tile) number    p: palette number  
-  Byte 4    vhoopppc    v: vertical flip   h: horizontal flip  o: priority bits  
+  Byte 3    cccccccc    c: starting character (tile) number    
+  Byte 4    vhoopppc    v: vertical flip   h: horizontal flip  o: priority bits p: palette number  
             Note: the 'c' in byte 4 is the MOST significant bit in the 9-bit char #.  
 ```
 
