@@ -115,6 +115,8 @@ Regarding our example, as the metasprite is made of **16x16** sprites and the sp
     oamMetaDrawDyn16(1, 64,160, (u8 *) spritehero_metasprites[0],(u8 *) &spritehero_til, OBJ_SMALL);
 ```
 
+<img width="508" height="496" alt="metasprite_tut01" src="https://github.com/user-attachments/assets/7920262e-27f0-4542-8b7d-372bdf90f6d3" />
+
 ## Playing with static graphics for metasprites  
 
 The only differences with Dynamic engine is that you do not need to initialize the engine but copy the graphics to Vram at the address you want.  
@@ -131,10 +133,10 @@ Then when you want to display a metasprite, you have to use the function **oamMe
 
 ```
     // draw the sprite
-    oamMetaDraw16(1, 64,160, (u8 *) spritehero_metasprites[0], OBJ_SMALL);
+    oamMetaDraw16(1, 64,160, (u8 *) spritehero_metasprites[0], OBJ_SMALL,0x0000);
 ```
 
-<img width="508" height="496" alt="metasprite_tut01" src="https://github.com/user-attachments/assets/7920262e-27f0-4542-8b7d-372bdf90f6d3" />
+If your sprite is not the first entry of the VRAM, you can add the offset for graphics as last parameter (replace our 0x0000 in the example).  
 
 ## Refresh the sprites  
 
