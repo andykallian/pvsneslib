@@ -20,6 +20,7 @@
   1. **[Map Engine 3: Display map on SNES (I)]( https://github.com/alekmaul/pvsneslib/wiki/Display-map-on-SNES-(1))**
 
 # Misc #
+  1. **[PVSneslib and Mesen2](https://github.com/alekmaul/pvsneslib/wiki/PVSneslib-and-Mesen2)**
   1. **[Contribute](https://github.com/alekmaul/pvsneslib/wiki/Contribute)**
   1. **[Community FAQ](https://github.com/alekmaul/pvsneslib/wiki/Community-FAQ)**
   1. **[Community code](https://github.com/alekmaul/pvsneslib/wiki/Community-code)**
