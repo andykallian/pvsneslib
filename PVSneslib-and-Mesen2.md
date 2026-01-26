@@ -2,7 +2,7 @@
 
 As described on [github](https://github.com/SourMesen/Mesen2), _Mesen is a multi-system emulator (NES, SNES, Game Boy, Game Boy Advance, PC Engine, SMS/Game Gear, WonderSwan) for Windows, Linux and macOS._
 
-<img width="1086" height="889" alt="mesen2" src="https://github.com/user-attachments/assets/7509a175-d99b-48c9-bd46-77ef45122323" />
+<img width="640" alt="mesen2" src="https://github.com/user-attachments/assets/7509a175-d99b-48c9-bd46-77ef45122323" />
 
 
 It is the tool we recommend to use with PVSneslib on any operating system to test your developments and debug them.
@@ -46,4 +46,4 @@ The REG_RDNMI point marks the end of logic. The NMI event marks the start of VBl
 
 ### Interpretation example  
 The screenshot shows that only a few scanlines remain before VBlank. This indicates that an overrun is close. Consider optimizing the logic or spreading work across multiple frames. If the number of free scanlines continues to shrink a real overrun will occur.  
-<img width="1024" height="1024" alt="mesen_tip" src="https://github.com/user-attachments/assets/6d2b4bae-7fd0-407a-aa6e-8c7f12f68f46" />
+<img width="512" alt="mesen_tip" src="https://github.com/user-attachments/assets/6d2b4bae-7fd0-407a-aa6e-8c7f12f68f46" />
