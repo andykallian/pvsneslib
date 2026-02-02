@@ -81,6 +81,23 @@ BG3 can also be useful for things like a blended cloud or fog in the foreground,
 
 To display a background with PVSnesLib, you must create a bitmap with a maximum of 16 color palettes per tile of 8x8 pixels and also no more than 8 palettes.  
 
+Also, you need to understand priorities in mode 1 regarding backgrounds and sprites.  
+
+```
+BG3 tiles with priority 1 if bit 3 of $2105 is set
+Sprites with priority 3
+BG1 tiles with priority 1
+BG2 tiles with priority 1
+Sprites with priority 2
+BG1 tiles with priority 0
+BG2 tiles with priority 0
+Sprites with priority 1
+BG3 tiles with priority 1 if bit 3 of $2105 is clear
+Sprites with priority 0
+BG3 tiles with priority 0
+```
+
+
 rilden did a tool that can easily convert bitmap with the correct number of colors and palette. You can check it [here](https://rilden.github.io/tiledpalettequant/) and the source code is available [here](https://github.com/rilden/tiledpalettequant).  
 
 ## Converting with gfx4snes
