@@ -123,6 +123,16 @@ The frame is stored in the **oamframeid** attribute. regarding our example, it c
     psprmen->oamrefresh = 1;
 ```
 
+## Displaying the sprites  
+
+You need to use the **oamDynamic16Draw** funciton to display a dynamic sprite on screen. The sprite is linked to the oambuffer index of it.  
+
+In our example, we display the sprite linked with oambuffer of index #0. Index is a number between 0 and 127, like the size of the oambuffer table.  
+
+```
+    oamDynamic16Draw(0);
+```
+
 ## Refresh the sprites  
 
 The sprite must be refresh at each frame, with the call of **oamInitDynamicSpriteEndFrame** function at the end of your current frame process.  
