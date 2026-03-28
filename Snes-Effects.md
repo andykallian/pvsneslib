@@ -1,5 +1,3 @@
-# SNES Visual Effects with PVSnesLib
-
 *(More chapters coming soon…)*
 
 ##  Gradient Effect
