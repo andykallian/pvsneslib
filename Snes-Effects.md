@@ -10,7 +10,9 @@
 
 One of the most iconic visual tricks in 16-bit era games is the **color gradient**: a smooth transition of colors across the screen from top to bottom. You can see it everywhere — from the sky in Donkey Kong Country to the menus of Chrono Trigger.
 
-On the SNES, the screen is drawn **scanline by scanline**, top to bottom. The key insight is: if you **change a palette color between two scanlines**, every horizontal band can display a different shade — giving a seamless gradient with zero tile cost.
+On the SNES, the screen is drawn **scanline by scanline**, top to bottom. The key insight is: if you **change a palette color between two scanlines**, every horizontal band can display a different shade — giving a seamless gradient with zero tile cost.  
+
+<img width="256" height="224" alt="GradientColors_000" src="https://github.com/user-attachments/assets/d00d631b-b549-4ba0-8d5c-9b1f6b3375ff" />
 
 ### How the SNES Draws Colors
 
