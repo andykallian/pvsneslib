@@ -18,7 +18,7 @@
   1. **[Map Engine 1: Import maps for Tiled](https://github.com/alekmaul/pvsneslib/wiki/Import-maps-for-Tiled)**
   1. **[Map Engine 2: Update maps in Tiled](https://github.com/alekmaul/pvsneslib/wiki/Update-Maps-in-Tiled)**
   1. **[Map Engine 3: Display map on SNES (I)]( https://github.com/alekmaul/pvsneslib/wiki/Display-map-on-SNES-(1))**
-  1. **[Snes Visual Effects]( https://github.com/alekmaul/pvsneslib/wiki/Snes-Effects)**
+  1. **[Graphic Visual Effects]( https://github.com/alekmaul/pvsneslib/wiki/Graphic-Visual-Effects)**
 
 # Misc #
   1. **[PVSneslib and Mesen2](https://github.com/alekmaul/pvsneslib/wiki/PVSneslib-and-Mesen2)**
