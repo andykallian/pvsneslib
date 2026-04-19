@@ -1,12 +1,10 @@
-*(More chapters coming soon…)*
-
 ##  Gradient Effect
 
 > 📁 Source example: `snes-examples/graphics/Effects/GradientColors`
 
 ### What Is the Gradient Effect?
 
-One of the most iconic visual tricks in 16-bit era games is the **color gradient**: a smooth transition of colors across the screen from top to bottom. You can see it everywhere — from the sky in Donkey Kong Country to the menus of Chrono Trigger.
+Gradient effect is visual tricks: a smooth transition of colors across the screen from top to bottom. You can see it everywhere — from the sky in Donkey Kong Country to the menus of Chrono Trigger.
 
 On the SNES, the screen is drawn **scanline by scanline**, top to bottom. The key insight is: if you **change a palette color between two scanlines**, every horizontal band can display a different shade — giving a seamless gradient with zero tile cost.  
 
@@ -40,7 +38,6 @@ Passing `-n` to `gfx4snes` instructs it to **skip tile output entirely** and ins
 $(GFXCONV) -n -i gradient.png
 ```
 
-
 #### Including the Generated File
 
 The generated `gradient_grad_data.asm` must then be included inside your project's `data.asm` file with a standard `.include` directive:
@@ -63,3 +60,199 @@ setModeHdmaColor((u8 *)&hdmaGradgradientList);
 
 Called once during initialization (or whenever you want to activate the gradient), the HDMA engine handles all per-scanline color writes in hardware, leaving the CPU entirely free for game logic.
 
+##  Fading Effect  
+
+> 📁 Source example: `snes-examples/graphics/Effects/Fading`
+
+### What Is the Fading Effect?  
+
+Screen fading is often used for transitions in SNES games. The display smoothly dims to black before a new scene loads, then gently brightens to reveal the next screen. You can find this technique in virtually every classic SNES title.  
+
+On the SNES, this effect is performed through a single **master brightness register** (`REG_INIDISP`) that controls the luminance of the entire display at once. There is no need to touch individual pixels or palette entries — the hardware does all the work.
+
+### Using `setFadeEffect...()`  
+
+PVSnesLib exposes two functions for this: `setFadeEffect()` and `setFadeEffectEx()`, both declared in `include/snes/video.h`.
+
+```c
+// Perform a fade with a default speed (1 frame per brightness step)
+void setFadeEffect(u8 mode);
+
+// Perform a fade with a custom number of frames per brightness step
+void setFadeEffectEx(u8 mode, u8 framesNumber);
+```
+
+Both functions are **blocking**: they wait until the full fade (all 16 brightness steps) has completed before returning to your code.
+
+### setFadeEffect — Simple Fade  
+
+`setFadeEffect(mode)` performs a fade using a default speed of **1 VBlank per brightness step**.
+
+```c
+void setFadeEffect(u8 mode);
+```
+
+**Parameters:**
+- `mode` — `FADE_IN` (2) or `FADE_OUT` (1)
+
+**Duration:** 16 steps × 1 frame = **16 frames** (~0.27 seconds at 60 Hz NTSC).
+
+```c
+// Fade out: screen goes from full brightness to black
+setFadeEffect(FADE_OUT);
+
+// ... swap graphics, load a new level, etc. ...
+
+// Fade in: screen returns from black to full brightness
+setFadeEffect(FADE_IN);
+```
+
+This is the simplest way to add a transition to your game. Use it when you want a quick, snappy cut between scenes.
+
+### setFadeEffectEx — Fade with Custom Speed
+
+`setFadeEffectEx(mode, framesNumber)` works exactly like `setFadeEffect()` but lets you control how many VBlanks to wait between each brightness step.
+
+```c
+void setFadeEffectEx(u8 mode, u8 framesNumber);
+```
+
+**Parameters:**
+- `mode` — `FADE_IN` (2) or `FADE_OUT` (1)
+- `framesNumber` — number of VBlanks to wait between each of the 16 brightness steps
+
+**Total fade duration:** `framesNumber × 16` frames.
+
+```c
+// Slow, dramatic fade out over ~1 second
+setFadeEffectEx(FADE_OUT, 4);
+
+// ... load new scene assets ...
+
+// Slow fade in over ~1 second
+setFadeEffectEx(FADE_IN, 4);
+```
+
+Use `setFadeEffectEx()` when you want a cinematic, gradual transition — for example at the start of the game, between story scenes, or after a boss is defeated.
+
+## Mosaic Effect
+
+> 📁 Source example: `snes-examples/graphics/Effects/WindowCircular`
+
+### What Is the Mosaic Effect?  
+
+The **mosaic** effect is a hardware-accelerated screen pixelation filter built directly into the SNES Picture Processing Unit (PPU). When enabled on a background layer, the PPU samples the colour of the **upper-left pixel** of every N×N block and tiles that colour across the entire block, making the image look like it is made of large square pixels. The block size ranges from **1×1** (no visible effect, single pixel) to **16×16** (maximum pixelation). You simply write a value to one register and the hardware does everything else.
+
+On the SNES, this effect is performed through a single **mosaic size and background register** (`REG_MOSAIC`) that controls the size and background used for the effect.
+
+### Using `setMosaicEffect()`  
+
+`setMosaicEffect(mode, bgNumbers)` performs a mosaic effect using a default speed of **1 VBlank per mosaic step**.
+
+```c
+void setMosaicEffect(u8 mode, u8 bgNumbers);
+```
+
+**Parameters:**
+- `mode` — `MOSAIC_IN`  for normal to mosaic, `MOSAIC_OUT` for mosaic to normal
+- `bgNumbers` — `MOSAIC_BG1` to `MOSAIC_BG4` depending of which background to use for effect
+
+Use `setMosaicEffect()` to  gradually increasing the mosaic size during a scene change pixelates the image into a blur, then a new scene fades in while the size decreases back to 1×1.
+
+
+## Animated Window Circular  
+
+> 📁 Source example: `snes-examples/graphics/Effects/WindowCircular`
+
+### What Is the Window Circular Effect?  
+
+The **animated circular wipe** (also called an *iris in / iris out*) is one of the most iconic screen-transition effects on the Super Nintendo. You can see it in **Super Mario World** every time a level ends or the player gets a game-over: a circular mask shrinks toward the player's position until the screen goes fully black, or grows from a point to reveal a new level.
+
+Despite looking complex, the effect is entirely achieved with the SNES **Window** hardware and **HDMA** (Horizontal-blank DMA). 
+
+```
+Frame 0          Frame 8          Frame 16         Frame 24
++-----------+    +-----------+    +-----------+    +-----------+
+|###########|    |###/---\###|    |#/-------\#|    |/----------\|
+|###########|    |###|   |###|    ||         ||    ||          ||
+|###########|    |###\---/###|    |#\-------/#|    |\----------/|
+|###########|    |###########|    |###########|    |###########|
++-----------+    +-----------+    +-----------+    +-----------+
+  Closed r=0      Small circle     Medium circle    Full screen
+```
+
+The SNES PPU provides **two hardware windows** (Window 1 and Window 2). Each window is defined by two horizontal coordinates written to registers (`REG_WH0` and `REG_WH1` that control the Window 1 left position (X1) and right position (X2), `REG_WH2` and `REG_WH3` for the Window 2 left (X1) and right (X2) positions).  
+
+The **inside-window** region spans pixels from X1 to X2, inclusive. Setting X2 < X1 produces an empty (zero-width) window. The window can be independently applied per background layer and per OBJ, and can be configured to show or hide the content inside or outside the window.
+
+By default these registers apply the same window shape to every scanline. By using **HDMA**, we can load different X1/X2 values for every horizontal line — which lets us draw *any shape we want*, line by line.
+
+### Using `setModeHdmaWindow...()`
+
+Declared in `<snes/dma.h>`:
+
+```c
+void setModeHdmaWindow(u8 bgrnd, u8 bgrndmask, u8 *hdmatableL, u8 *hdmatableR);
+```
+
+**Parameters:**
+
+- `bgrnd`- Which background layers get the window mask. Combine `MSWIN_BG1`..`MSWIN_BG4` with `\|`. |
+- `bgrndmask`- Per-layer inside/outside logic. Use `MSWIN1_BGxMSKENABLE` (show inside) or `MSWIN1_BGxMSKOUT` (show outside). |
+- `hdmatableL`- HDMA table for **Window 1 left** edge (`REG_WH0`) — one byte per scanline |
+- `hdmatableR`- HDMA table for **Window 1 right** edge (`REG_WH1`) — one byte per scanline |
+
+This function configures **HDMA channels 4 and 5** to feed WH0 and WH1 every scanline, and writes `REG_W12SEL`, `REG_W34SEL`, and `REG_TMW` according to the mask arguments.  
+
+`setModeHdmaWindow()` expects two **separate, single-byte-per-scanline** tables in direct repeat-mode format:
+
+```
+Byte 0:       (line_count | 0x80)   -- bit7=1 means repeat; value=number of scanlines
+Byte 1:       X edge for scanline 0
+Byte 2:       X edge for scanline 1
+...
+Byte 224:     X edge for scanline 223
+Byte 225:     0x00                  -- table terminator
+```
+
+With 224 scanlines handled in one block, the header byte is `0x80 | 224 = 0xE0`.
+
+```c
+void setModeHdmaWindowEx(u8 bgrnd, u8 bgrndmask, u8 *hdmatableLR);
+```
+
+**Parameters:**
+
+- `bgrnd`- Which background layers get the window mask. Combine `MSWIN_BG1`..`MSWIN_BG4` with `\|`
+- `bgrndmask`- Per-layer inside/outside logic. Use `MSWIN1_BGxMSKENABLE` (show inside) or `MSWIN1_BGxMSKOUT` (show outside)
+- `hdmatableLR`- HDMA table for **Window 1 left and right** edge (`REG_WH0` and `REG_WH1`) — two bytes per scanline
+
+To stop the effect:
+
+```c
+void setModeHdmaWindowReset(u8 channels);
+
+// Stop the window HDMA and clear window registers:
+setModeHdmaWindowReset(HDMA_CHANNEL4 | HDMA_CHANNEL5);
+```
+
+
+### Important notice about tables used for this effect  
+
+It is important to have two version of the tables, the one used for calculation and another for the hmda. Without that, you will have flickeing on screen.
+This is the reason why you have this trick in the example.
+```c
+...
+extern u8 hdma_table_LR[224 * 3 + 1]; 
+u8 hdma_table_LRB[224 * 3 + 1]; 
+...
+
+... // calculate new value in hdma_table_LR 
+
+// to avoid glitch on screen after calculating new values
+memcpy(hdma_table_LRB,hdma_table_LR,224*3+1); 
+...
+
+```
+
+Use `setModeHdmaWindowEx()` when you want a nice gradual opening screen — for example at the start of the level in a game, as we saw it on ancient computer games like Lode Runner on Apple II ;-) .  
