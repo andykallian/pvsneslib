@@ -64,9 +64,11 @@ Called once during initialization (or whenever you want to activate the gradient
 
 > 📁 Source example: `snes-examples/graphics/Effects/Fading`
 
-### What Is the Fading Effect?  
+### What is the Fading Effect?  
 
 Screen fading is often used for transitions in SNES games. The display smoothly dims to black before a new scene loads, then gently brightens to reveal the next screen. You can find this technique in virtually every classic SNES title.  
+
+<img width="253" height="223" alt="fading_effect" src="https://github.com/user-attachments/assets/48a0661d-11f6-4823-9896-e2f3fa2b15db" />
 
 On the SNES, this effect is performed through a single **master brightness register** (`REG_INIDISP`) that controls the luminance of the entire display at once. There is no need to touch individual pixels or palette entries — the hardware does all the work.
 
@@ -167,6 +169,9 @@ Use `setMosaicEffect()` to  gradually increasing the mosaic size during a scene 
 ### What Is the Window Circular Effect?  
 
 The **animated circular wipe** (also called an *iris in / iris out*) is one of the most iconic screen-transition effects on the Super Nintendo. You can see it in **Super Mario World** every time a level ends or the player gets a game-over: a circular mask shrinks toward the player's position until the screen goes fully black, or grows from a point to reveal a new level.
+
+<img width="255" height="223" alt="window_circular" src="https://github.com/user-attachments/assets/81e6bbfa-7ab9-44db-b845-443e35effca0" />
+
 
 Despite looking complex, the effect is entirely achieved with the SNES **Window** hardware and **HDMA** (Horizontal-blank DMA). 
 
