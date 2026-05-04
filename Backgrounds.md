@@ -70,6 +70,8 @@ The byte address in VRAM where the character data starts can be found using the 
 ```
 The horizontal and vertical flip bits, if set to 1, will cause the characters to be mirrored when shown on the screen, so that they are facing the opposite direction. When in 16x16 tile mode, the entire tile is flipped (pixel 0 is swapped with pixel 15) rather than the individual 8x8 sub tiles being flipped.  
   
+Addresses of brakcgrounds are in units of 4 KB **(value × $1000)**  
+
 The priority bit has the effect of deciding whether a given tile is 'on top of' or behind other BGs and sprites.  For more information on the drawing order, see bit 3 of register $2105.  
 
 ## Backgrounds with PVSnesLib

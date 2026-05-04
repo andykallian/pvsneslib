@@ -72,6 +72,12 @@ The second table is 32 bytes and has 2 bits for each sprite (each byte contains 
   bit 1/3/5/7 of byte OBJ/4: s   s: size toggle bit 
 ```
 
+All the sprites are stored in a structure named oamMemory declared in PVSnesLib.  
+
+```
+u8 oamMemory[128 *4+8 *4]
+```
+
 ### Sprites in VRAM
 
 Sprites are interleaved in Video RAM. In other words, when using 32x32 tiles, there would be 3 more sprites stored in that "unused" space. 
@@ -255,6 +261,15 @@ Of course, if you need to change also the flipping of the sprite, use the **oams
 		WaitForVBlank();
 	}
 ```
+
+## Rendering the sprites on screen  
+
+PVSnesLib includes a Vertical Blank Interrupt Service Routine (VBlank ISR or NMI ISR).
+
+THis routine will do some actions at the start of the Vertical Blanking Period when VBlank interrupts are enabled. One of the actions is to transfer oamMemory to the PPU OAM on non **lag-frames**.
+
+**Lag-frames** are determined by the **vblank_flag** variable, which is set on WaitForVBlank() and cleared in the VBlank ISR.
+
 
 **That's all for sprite tutorial, you are now able to move objects on SNES screen !** LOL  
 
