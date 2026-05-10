@@ -1,5 +1,3 @@
-# PAL vs NTSC: What Is the Difference?
-
 The SNES was released in different regions with hardware tuned to match the local television standard:
 
 | Feature | NTSC (Japan / North America) | PAL (Europe / Australia) |
@@ -14,7 +12,7 @@ The SNES was released in different regions with hardware tuned to match the loca
 | CPU clock (fast / FastROM) | ~3.58 MHz | ~3.55 MHz |
 | SPC700 (audio CPU) | ~1.024 MHz | ~1.024 MHz |
 
-## Why does 50 Hz matter for games?
+# Why does 50 Hz matter for games?
 
 Many games written for NTSC assume that one VBlank happens every 1/60 of a second. On a PAL console running at 50 Hz there are only 50 VBlanks per second, making the game run **~17% slower** — sprites move more slowly, music plays at a lower pitch, and timers run long. This is the infamous "PAL slowdown" players experienced with imported cartridges in Europe.
 
