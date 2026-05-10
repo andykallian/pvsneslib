@@ -9,16 +9,18 @@
   1. **[Introduction](https://github.com/alekmaul/pvsneslib/wiki/Introduction)**
   1. **[Hello World example](https://github.com/alekmaul/pvsneslib/wiki/Compiling-helloworld-example)**
   1. **[Input and Output](https://github.com/alekmaul/pvsneslib/wiki/Input-and-Output)**
+  1. **[Graphic Memory Best Practices](https://github.com/alekmaul/pvsneslib/wiki/VRAM)**
+  1. **[Backgrounds](https://github.com/alekmaul/pvsneslib/wiki/Backgrounds)**
   1. **[Sprites](https://github.com/alekmaul/pvsneslib/wiki/Sprites)**
   1. **[Dynamic Sprites](https://github.com/alekmaul/pvsneslib/wiki/Dynamic-Sprites)**
   1. **[Meta Sprites](https://github.com/alekmaul/pvsneslib/wiki/Meta-Sprites)**
-  1. **[Backgrounds](https://github.com/alekmaul/pvsneslib/wiki/Backgrounds)**
   1. **[Sounds and Musics](https://github.com/alekmaul/pvsneslib/wiki/Sounds-and-Musics)**
   1. **[HiRom and FastRom](https://github.com/alekmaul/pvsneslib/wiki/HiRom-and-FastRom)**
   1. **[Map Engine 1: Import maps for Tiled](https://github.com/alekmaul/pvsneslib/wiki/Import-maps-for-Tiled)**
   1. **[Map Engine 2: Update maps in Tiled](https://github.com/alekmaul/pvsneslib/wiki/Update-Maps-in-Tiled)**
   1. **[Map Engine 3: Display map on SNES (I)]( https://github.com/alekmaul/pvsneslib/wiki/Display-map-on-SNES-(1))**
   1. **[Graphic Visual Effects]( https://github.com/alekmaul/pvsneslib/wiki/Graphic-Visual-Effects)**
+  1. **[Pal and NTSC]( https://github.com/alekmaul/pvsneslib/wiki/PAL-and-NTSC)**
 
 # Misc #
   1. **[PVSneslib and Mesen2](https://github.com/alekmaul/pvsneslib/wiki/PVSneslib-and-Mesen2)**
