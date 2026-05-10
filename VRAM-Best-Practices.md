@@ -1,5 +1,3 @@
-# VRAM Address and Allocation Best Practices
-
 The SNES PPU (Picture Processing Unit) has **64 KiB of VRAM** (word addresses `$0000`–`$7FFF`). Every byte of it is shared between BG tile graphics, BG tilemaps, and OBJ (sprite) tile graphics. Nothing stops you from placing two things at the same VRAM (Video RAM) address — the hardware will silently corrupt both. 
 
 ## Hardware Constraints
