@@ -106,23 +106,26 @@ The `ROMSIZE` formula is generally $2^n$ KB.
 
 | Value | Size | Example Game |
 | --- | --- | --- |
-| `$07` | 128 KB | *Combat Ribbons* |
-| `$08` | 256 KB (2 Mbit) | *Super Mario Bros. (All-Stars version)* |
-| `$09` | 512 KB (4 Mbit) | *F-Zero* |
-| `$0A` | 1024 KB (8 Mbit) | *Super Castlevania IV* |
-| `$0B` | 2048 KB (16 Mbit) | *The Legend of Zelda: A Link to the Past* |
-| `$0C` | 4096 KB (32 Mbit) | *Super Metroid* |
-| `$0D` | 8192 KB (64 Mbit) | *Tales of Phantasia* (Max official size) |
+| `$07` | 128 KB (1 Mbit) | *Super Mario Kart (Early prototype/Demo builds only. Very few retail games used this small size)* |
+| `$08` | 256 KB (2 Mbit) | *Pilotwings / Gradius III* |
+| `$09` | 512 KB (4 Mbit) | *Super Mario World / F-Zero / ActRaiser* |
+| `$0A` | 1024 KB (8 Mbit) | *Super Metroid / The Legend of Zelda: ALttP* |
+| `$0B` | 2048 KB (16 Mbit) | *Donkey Kong Country / Super Mario Kart (Retail)* |
+| `$0C` | 4096 KB (32 Mbit) | *Chrono Trigger / Final Fantasy VI* |
+| `$0D` | 8192 KB (64 Mbit) | *Tales of Phantasia / Star Ocean (Max native hardware size) |
 
 `SRAMSIZE` refers to the "Save RAM" (SRAM) used for battery-backed saves or extra workspace.
 
 | Value | Size | Example Game |
 | --- | --- | --- |
-| `$00` | None | *Street Fighter II* |
-| `$01` | 2 KB | *Super Mario World* |
-| `$03` | 8 KB | *The Legend of Zelda: ALTTP* |
-| `$05` | 32 KB | *Secret of Mana* |
-| `$07` | 128 KB | *SimCity* |
+| `$00` | None | *Street Fighter II / Gradius III (Uses passwords or no save)* |
+| `$01` | 2 KB (16 Kbit) | *Super Mario World / F-Zero* |
+| `$02` | 4 KB (32 Kbit) | *Super Mario Kart* |
+| `$03` | 8 KB (64 Kbit) | *The Legend of Zelda: ALttP / Super Metroid* |
+| `$03` | 16 KB (128 Kbit) | *Secret of Mana* |
+| `$05` | 32 KB (256 Kbit) | *EarthBound / Final Fantasy VI* |
+| `$06` | 64 KB (512 Kbit) | *SimCity* |
+| `$07` | 128 KB (1024 Kbit) | *Dezaemon (Music/Shmup creator)* |
 
 Exception: If you're using Super FX aka GSU-1, move this value to the Expansion RAM Size field, and put #$00 in this byte.  
 
