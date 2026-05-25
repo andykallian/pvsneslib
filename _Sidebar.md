@@ -16,9 +16,7 @@
   1. **[Meta Sprites](https://github.com/alekmaul/pvsneslib/wiki/Meta-Sprites)**
   1. **[Sounds and Musics](https://github.com/alekmaul/pvsneslib/wiki/Sounds-and-Musics)**
   1. **[HiRom and FastRom](https://github.com/alekmaul/pvsneslib/wiki/HiRom-and-FastRom)**
-  1. **[Map Engine 1: Import maps for Tiled](https://github.com/alekmaul/pvsneslib/wiki/Import-maps-for-Tiled)**
-  1. **[Map Engine 2: Update maps in Tiled](https://github.com/alekmaul/pvsneslib/wiki/Update-Maps-in-Tiled)**
-  1. **[Map Engine 3: Display map on SNES (I)]( https://github.com/alekmaul/pvsneslib/wiki/Display-map-on-SNES-(1))**
+  1. **[Maps and Objects Engines](https://github.com/alekmaul/pvsneslib/wiki/Map-Objects-Engine)**
   1. **[Graphic Visual Effects]( https://github.com/alekmaul/pvsneslib/wiki/Graphic-Visual-Effects)**
   1. **[Pal and NTSC]( https://github.com/alekmaul/pvsneslib/wiki/PAL-and-NTSC)**
   1. **[SNES ROM Header](https://github.com/alekmaul/pvsneslib/wiki/SNES-ROM-Header)**
