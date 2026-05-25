@@ -125,51 +125,25 @@ Each object has:
 
 ## Adding objects with Tiled
 
-Dans Tiled, nous nous limiterons à définir l’emplacement des objets. Il faut juste prendre soin de créer le premier objet en tant que personnage principale pour notre jeu, les autres seront les objets avec lesquels notre personnage pourra avoir des interactions.
+In Tiled, we will limit ourselves to defining the location of objects. This definition is done through the layer named “Entities”. 
 
-Cette définition se fait au travers du calque nommé « Entities ». Cela n’est pas obligatoire et peut être fait directement dans le code. C’est juste par simplicité et facilité de mise à jour que nous utilisons Tiled dans notre cas.
 <img width="609" height="432" alt="15_image" src="https://github.com/user-attachments/assets/ce69b40c-9a60-46a3-841a-6d2a59fbe879" />
+
+> This is not required and can be done directly in code. It’s just for simplicity and ease of updating that we use Tiled in our case.
+
+We just have to take care of creating the first object as the main character for our game, the others will be the objects with which our character can have interactions.  
+
 <img width="233" height="114" alt="16_image" src="https://github.com/user-attachments/assets/bc462e81-afc7-4c66-82b7-bd41f2b46036" />
+
+Object types are defined by the `Class` attribute of Tiled. The `Class` with value 0 will therefore be the one used for our character. We will also add another class 1 object which will be a watch in our game in next chapters.  
+
 <img width="678" height="468" alt="17_image" src="https://github.com/user-attachments/assets/42e7d937-60d3-4049-af80-f981f3756c51" />
-<img width="598" height="535" alt="18_1_image" src="https://github.com/user-attachments/assets/97fc4adc-3aa7-46bc-91dc-41a23e5fe1ae" />
+
+We thus add the Hero object of class `0` in coordinates **168.208** and the Monster object of class `1` in coordinates **520.224**.
+
 <img width="853" height="261" alt="18_image" src="https://github.com/user-attachments/assets/fd8de242-78c0-4641-b67a-d6cb15f1b152" />
-<img width="429" height="521" alt="19_image" src="https://github.com/user-attachments/assets/f9c20bc4-8e8c-4041-ab12-36f0524e1bf7" />
 
-
-## Object Classes
-
-| Class | Object |
-|---|---|
-| 0 | Hero |
-| 1 | Monster |
-
-## Example Objects
-
-### Hero
-
-| Property | Value |
-|---|---|
-| Class | 0 |
-| Position | 168,208 |
-
-### Monster
-
-| Property | Value |
-|---|---|
-| Class | 1 |
-| Position | 520,224 |
-| minx | minimum X movement |
-| maxx | maximum X movement |
-
-The monster uses custom properties:
-
-```text
-minx
-maxx
-```
-
-These define movement boundaries.
-
+One particular thing concerns the monster, we manage 2 custom properties (like for the tile attributes) named `minx` and `maxx`, which will allow us to update the movement of the monster more easily on the map. These 2 properties contain the minimum and maximum values ​​in X of its movements. There is no equivalent to manage the same thing in Y.
 
 # Create Project Structure
 
@@ -207,21 +181,21 @@ BG1.m16: tiled.tmj tiles.pic
 	$(TMXCONV) $< tiled.map
 ```
 
-## Convert Hero Sprite
+## Convert Hero and Mosnter Sprites
 
 ```make
 sprkeen.pic: sprkeen.png
 	@echo convert hero sprite bitmap ... $(notdir $@)
 	$(GFXCONV) -s 16 -o 16 -u 16 -p -i $<
-```
 
-## Convert Monster Sprite
-
-```make
 sprmonster.pic: sprmonster.png
 	@echo convert monster sprite bitmap ... $(notdir $@)
 	$(GFXCONV) -s 16 -o 16 -u 16 -p -i $<
 ```
+
+Hero and Monster sprites are defined in our graphic tool, `GraphicGale' in our case.
+
+<img width="598" height="535" alt="18_1_image" src="https://github.com/user-attachments/assets/97fc4adc-3aa7-46bc-91dc-41a23e5fe1ae" />
 
 ## Build Dependencies
 
@@ -253,7 +227,6 @@ objmap: .incbin "tiled.o16"
 .ends
 ```
 
-
 # Main Program Initialization
 
 The main program initializes:
@@ -282,9 +255,7 @@ bgSetMapPtr(0, 0x6800, SC_64x32);
 
 `0x6800` is required by the map engine.
 
----
-
-# Initialize Dynamic Sprites
+## Initialize Dynamic Sprites
 
 ```c
 oamInitDynamicSprite(0x0000, 0x1000, 0, 0, OBJ_SIZE8_L16);
@@ -293,9 +264,7 @@ oamInitDynamicSprite(0x0000, 0x1000, 0, 0, OBJ_SIZE8_L16);
 - `0x0000` : large sprites VRAM area
 - `0x1000` : small sprites VRAM area
 
----
-
-# Initialize Object Engine
+## Initialize Object Engine
 
 ```c
 objInitEngine();
@@ -304,9 +273,7 @@ objInitFunctions(0, &heroinit, &heroupdate, NULL);
 objInitFunctions(1, &monsterinit, &monsterupdate, NULL);
 ```
 
----
-
-# Load Map and Objects
+## Load Map and Objects
 
 ```c
 objLoadObjects((char *)&objmap);
@@ -320,9 +287,7 @@ mapLoad(
 
 Object initialization functions are automatically called during map loading.
 
----
-
-# Configure Video Mode
+## Configure Video Mode
 
 ```c
 setMode(BG_MODE1, 0);
@@ -333,9 +298,7 @@ bgSetDisable(2);
 setScreenOn();
 ```
 
----
-
-# Main Game Loop
+## Main Game Loop
 
 ```c
 while (1)
@@ -362,13 +325,12 @@ This loop:
 2. updates the map
 3. updates objects
 4. uploads sprite graphics
-5. synchronizes with VBlank
+5. synchronizes with VBlank 
+6. update map scrolling and free sprite queue
 
----
+## Hero Object implementation
 
-# Hero Object
-
-## Hero Variables
+Hero source code uses some variables for its management and an object pointer to allow us to manage easily each proprety of the hero.
 
 ```c
 t_objs *heroobj;
@@ -381,50 +343,53 @@ u16 herox, heroy;
 u8 herofidx, flip;
 ```
 
----
-
-# Hero Initialization
+### Hero Initialization
 
 ```c
 void heroinit(u16 xp, u16 yp, u16 type, u16 minx, u16 maxx)
+{
+    // Prepare new object
+    if (objNew(type, xp, yp) == 0)
+        // no more space, we quit
+        return;
+
+    // Init. sprite object (objgetid is id of current object)
+    //  like sprite size (16x24 with an offset Y deof 8, see sprite graphic)
+    objGetPointer(objgetid);
+    heroobj = &objbuffers[objptr - 1];
+    heroobj->width = 16; heroobj->height = 24; heroobj->yofs=8;
+    
+    // Save velocity and coordinate pointers
+    heroox = (u16 *)&(heroobj->xpos + 1);
+    herooy = (u16 *)&(heroobj->ypos + 1);
+    heroxv = (short *)&(heroobj->xvel);
+    heroyv = (short *)&(heroobj->yvel);
+
+    // Init other variables
+    herofidx = 0;
+    heroobj->action = ACT_STAND;
 ```
 
-The object is allocated using:
+The object is allocated using `objNew(type, xp, yp)`
+
+The hero uses two `16x16` sprites as its size is `16x24`.
 
 ```c
-objNew(type, xp, yp)
+    // prepare le sprite (2 sprites de 16x16)
+    oambuffer[0].oamframeid = 0;
+    oambuffer[0].oamrefresh = 1;
+    oambuffer[0].oamattribute = 0x20 | (0 << 1); // palette 0 des sprites and sprite 16x16 and priorite 2 
+    oambuffer[0].oamgraphics = &sprkeen_til;
+    oambuffer[1].oamframeid = 1;
+    oambuffer[1].oamrefresh = 1;
+    oambuffer[1].oamattribute = 0x20 | (0 << 1); // palette 0 des sprites and sprite 16x16 and priorite 2 
+    oambuffer[1].oamgraphics = &sprkeen_til;
+
+    // Init palette du sprites 
+    setPalette(&sprkeen_pal, 128 + 0 * 16, 16 * 2);
 ```
 
-Configure dimensions:
-
-```c
-heroobj->width = 16;
-heroobj->height = 24;
-heroobj->yofs = 8;
-```
-
----
-
-# Hero Sprite Setup
-
-The hero uses two `16x16` sprites.
-
-```c
-oambuffer[0].oamframeid = 0;
-oambuffer[0].oamrefresh = 1;
-oambuffer[0].oamattribute = 0x20 | (0 << 1);
-oambuffer[0].oamgraphics = &sprkeen_til;
-```
-
-Load the palette:
-
-```c
-setPalette(&sprkeen_pal, 128 + 0 * 16, 16 * 2);
-```
-
----
-
-# Hero Movement
+### Hero Movement
 
 The update function handles:
 
@@ -434,66 +399,99 @@ The update function handles:
 - animation
 - collisions
 
-## Move Left
 
 ```c
-*heroxv -= HERO_ACCEL;
-```
+void heroupdate(u8 idx)
+{
+    // check only the keys for the game
+    if (pad0 & (KEY_RIGHT | KEY_LEFT | KEY_A))
+    {
+        // go to the left
+        if (pad0 & KEY_LEFT)
+        {
+            // update anim (sprites 2-3)
+            oambuffer[0].oamattribute |= 0x40; // flip sprite
+            oambuffer[1].oamattribute |= 0x40; // flip sprite
 
-## Move Right
+            // update velocity
+            heroobj->action = ACT_WALK;
+            *heroxv -= (HERO_ACCEL);
+            if (*heroxv <= (-HERO_MAXACCEL))
+                *heroxv = (-HERO_MAXACCEL);
+        }
+        // go to the right
+        if (pad0 & KEY_RIGHT)
+        {
+            // update anim (sprites 2-3)
+            oambuffer[0].oamattribute &= ~0x40; // don't flip sprite
+            oambuffer[1].oamattribute &= ~0x40; // don't flip sprite
+
+            // update velocity
+            heroobj->action = ACT_WALK;
+            *heroxv += (HERO_ACCEL);
+            if (*heroxv >= (HERO_MAXACCEL))
+                *heroxv = (HERO_MAXACCEL);
+        }
+        // jump 
+        if (pad0 & KEY_A)
+        {
+            // we can jump only if we are on ground
+            if ((heroobj->tilestand != 0))
+            {
+                heroobj->action = ACT_JUMP;
+                // if key up, jump 2x more
+                if (pad0 & KEY_UP)
+                    *heroyv = -(HERO_HIJUMPING);
+                else
+                    *heroyv = -(HERO_JUMPING);
+            }
+        }
+    }
+```
+### Map Collision
+
+Inside the heroUpdate function, we check collision against tile attributes configured in Tiled, update position regarding `X` and `Y` velocity.
 
 ```c
-*heroxv += HERO_ACCEL;
+    // 1), check les collisions avec la carte
+    objCollidMap(idx);
+
+    //  met a jour l'animation suivant l'etat du heros
+    if (heroobj->action == ACT_WALK)
+        herowalk(idx);
+    else if (heroobj->action == ACT_FALL)
+        herofall(idx);
+    else if (heroobj->action == ACT_JUMP)
+        herojump(idx);
+
+    // met a jour la position sur la carte
+    objUpdateXY(idx);
+
+    // quelques limites ;)
+    if (*heroox <= 0)
+        *heroox = 0;
+    if (*herooy <= 0)
+        *herooy = 0;
 ```
 
-## Jump
+### Rendering the Hero and camera position
 
 ```c
-*heroyv = -(HERO_JUMPING);
+    // change les coordonnées du sprites sur la position sur la carte
+    herox = (*heroox);
+    heroy = (*herooy);
+    oambuffer[0].oamx = herox - x_pos;
+    oambuffer[0].oamy = heroy - y_pos;
+    oambuffer[1].oamx = herox - x_pos;
+    oambuffer[1].oamy = heroy - y_pos+16;
+    oamDynamic16Draw(0);
+    oamDynamic16Draw(1);
+
+    // Met a jour la camera suivant la position du heros
+    mapUpdateCamera(herox, heroy);
 ```
 
-High jump:
-
-```c
-*heroyv = -(HERO_HIJUMPING);
-```
-
----
-
-# Map Collision
-
-```c
-objCollidMap(idx);
-```
-
-This checks collision against tile attributes configured in Tiled.
-
----
-
-# Updating Object Position
-
-```c
-objUpdateXY(idx);
-```
-
----
-
-# Rendering the Hero
-
-```c
-oamDynamic16Draw(0);
-oamDynamic16Draw(1);
-```
-
-The camera follows the hero:
-
-```c
-mapUpdateCamera(herox, heroy);
-```
-
----
-
-# Hero Animations
+### Hero Animations
 
 Animations are controlled through:
 
@@ -502,17 +500,68 @@ Animations are controlled through:
 - `ACT_JUMP`
 - `ACT_STAND`
 
-Walking animation updates sprite frame indices.
+Walking animation updates sprite frame indices. Jumping switches to dedicated jump frames.
 
-Jumping switches to dedicated jump frames.
+```c
+// Gestion du deplacement du heros
+void herowalk(u8 idx)
+{
+    // update animation
+    flip++;
+    if ((flip & 3) == 3)
+    {
+        herofidx+=2;
+        if (herofidx>6) herofidx = 0;
+        oambuffer[0].oamframeid = herofidx;
+        oambuffer[0].oamrefresh = 1;
+        oambuffer[1].oamframeid = herofidx+1;
+        oambuffer[1].oamrefresh = 1;
+    }
 
----
+    // check if we are still walking or not with the velocity properties of object
+    if (*heroyv != 0)
+        heroobj->action = ACT_FALL;
+    else if ((*heroxv == 0) && (*heroyv == 0))
+        heroobj->action = ACT_STAND;
+}
 
-# Monster Object
+//---------------------------------------------------------------------------------
+void herofall(u8 idx)
+{
+    // Si on ne chute plus, on reste debout
+    if (*heroyv == 0)
+    {
+        heroobj->action = ACT_STAND;
+        oambuffer[0].oamframeid = 0;
+        oambuffer[0].oamrefresh = 1;
+        oambuffer[1].oamframeid = 1;
+        oambuffer[1].oamrefresh = 1;
+    }
+}
+
+//---------------------------------------------------------------------------------
+void herojump(u8 idx)
+{
+    // change sprite
+    if (oambuffer[0].oamframeid != 8)
+    {
+        oambuffer[0].oamframeid = 8;
+        oambuffer[0].oamrefresh = 1;
+        oambuffer[1].oamframeid = 9;
+        oambuffer[1].oamrefresh = 1;
+    }
+
+    // if no more jumping, then fall
+    if (*heroyv >= 0)
+        heroobj->action = ACT_FALL;
+}
+
+```
+
+
+## Monster Object implementation
 
 The monster behaves similarly to the hero but uses simpler logic.
-
-## Initialization
 
 ```c
 monsterobj->width = 16;
@@ -524,33 +573,77 @@ monsterobj->xmax = maxx;
 
 Movement limits come from Tiled custom properties.
 
----
+### Monster Sprite Index
 
-# Monster Sprite Index
+>Pay attention to the number of sprites to use. 
 
-```c
-monsterobj->sprnum = 2;
-```
-
-Sprites `0` and `1` are already used by the hero.
-
----
-
-# Monster Movement
-
-The monster automatically moves left and right:
+Often, we manage it in a variable that we increment each time an initialization function is called. As we only have one monster object on the screen, I leave it set to the value “2” which corresponds to the sprite we are going to have (0 and 1 being for the hero).
 
 ```c
-if (monsterx <= monsterobj->xmin)
+    monsterobj->sprnum = 2;  // IMPORTANT ! To be managed with a variable depending on the number of objects on the screen (2 for the hero, so there are 2 here)
 ```
 
-and:
+> Sprites `0` and `1` are already used by the hero.
+
+### Monster Movement
+
+The update function is simpler because we only manage the movement. 
+
+We start by retrieving the object identifier and the sprite is flipped depending on direction.
 
 ```c
-if (monsterx >= monsterobj->xmax)
+void monsterupdate(u8 idx)
+{
+    // recupere l'objet a mettre a jour
+    monsterobj = &objbuffers[idx];
+    monsterox = (u16 *)&(monsterobj->xpos + 1);
+    monsteroy = (u16 *)&(monsterobj->ypos + 1);
+    monsternum=monsterobj->sprnum;
+    monsterx = *monsterox;
 ```
 
-The sprite is flipped depending on direction.
+and the limit managed with minx and maxx
 
----
+```c
+    monsterobj->count++;
+    if (monsterobj->count >= 3) { // updates 20 times per second
+        monsterobj->count = 0;
+        monsterobj->sprframe = (1 - monsterobj->sprframe); // Faster because only 2 frames
+        oambuffer[monsternum].oamframeid=monsterobj->sprframe; 
+        oambuffer[monsternum].oamrefresh = 1;
 
+        // We go to the left
+        if (monsterobj->dir == MONSTER_LEFT) {
+            if (monsterx <= monsterobj->xmin) {
+                monsterobj->dir = MONSTER_RIGHT;
+                monsterobj->xvel = +MONSTER_XVELOC;
+                monsterobj->yvel = 0;
+                oambuffer[monsternum].oamattribute &=~0x40;
+            }
+            else {
+                monsterobj->xvel = -MONSTER_XVELOC;
+            }
+        }
+        // here it's right :)
+        else {
+            if (monsterx >= monsterobj->xmax) {
+                monsterobj->dir = MONSTER_LEFT;
+                monsterobj->xvel = -MONSTER_XVELOC;
+                monsterobj->yvel = 0;
+                oambuffer[monsternum].oamattribute |=0x40;
+            }
+            else {
+                monsterobj->xvel = +MONSTER_XVELOC;
+            }
+        }
+        // update coordinates
+        objUpdateXY(idx);
+    }
+
+    // update spite on screen
+    oambuffer[monsternum].oamx = monsterx - x_pos;
+    oambuffer[monsternum].oamy =(*monsteroy) - y_pos;
+    oamDynamic16Draw(monsternum);
+```
+
+That's all for the map and sprite engines, you can now play with them for your own game!
