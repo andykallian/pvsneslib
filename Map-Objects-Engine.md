@@ -128,6 +128,12 @@ Each object has:
 Dans Tiled, nous nous limiterons à définir l’emplacement des objets. Il faut juste prendre soin de créer le premier objet en tant que personnage principale pour notre jeu, les autres seront les objets avec lesquels notre personnage pourra avoir des interactions.
 
 Cette définition se fait au travers du calque nommé « Entities ». Cela n’est pas obligatoire et peut être fait directement dans le code. C’est juste par simplicité et facilité de mise à jour que nous utilisons Tiled dans notre cas.
+<img width="609" height="432" alt="15_image" src="https://github.com/user-attachments/assets/ce69b40c-9a60-46a3-841a-6d2a59fbe879" />
+<img width="233" height="114" alt="16_image" src="https://github.com/user-attachments/assets/bc462e81-afc7-4c66-82b7-bd41f2b46036" />
+<img width="678" height="468" alt="17_image" src="https://github.com/user-attachments/assets/42e7d937-60d3-4049-af80-f981f3756c51" />
+<img width="598" height="535" alt="18_1_image" src="https://github.com/user-attachments/assets/97fc4adc-3aa7-46bc-91dc-41a23e5fe1ae" />
+<img width="853" height="261" alt="18_image" src="https://github.com/user-attachments/assets/fd8de242-78c0-4641-b67a-d6cb15f1b152" />
+<img width="429" height="521" alt="19_image" src="https://github.com/user-attachments/assets/f9c20bc4-8e8c-4041-ab12-36f0524e1bf7" />
 
 
 ## Object Classes
