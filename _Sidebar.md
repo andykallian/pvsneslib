@@ -16,7 +16,7 @@
   1. **[Meta Sprites](https://github.com/alekmaul/pvsneslib/wiki/Meta-Sprites)**
   1. **[Sounds and Musics](https://github.com/alekmaul/pvsneslib/wiki/Sounds-and-Musics)**
   1. **[HiRom and FastRom](https://github.com/alekmaul/pvsneslib/wiki/HiRom-and-FastRom)**
-  1. **[Maps and Objects Engines](https://github.com/alekmaul/pvsneslib/wiki/Map-Objects-Engine)**
+  1. **[Map and Object Engines](https://github.com/alekmaul/pvsneslib/wiki/Map-and-Object-Engines)**
   1. **[Graphic Visual Effects]( https://github.com/alekmaul/pvsneslib/wiki/Graphic-Visual-Effects)**
   1. **[Pal and NTSC]( https://github.com/alekmaul/pvsneslib/wiki/PAL-and-NTSC)**
   1. **[SNES ROM Header](https://github.com/alekmaul/pvsneslib/wiki/SNES-ROM-Header)**
